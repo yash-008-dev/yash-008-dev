@@ -1,4 +1,7 @@
 <img width="1810" height="273" alt="github-header-banner" src="https://github.com/user-attachments/assets/8c91bc28-036c-4dc8-a3bf-5dd77ba023d0" />
+<p align="center">
+<img src="https://komarev.com/ghpvc/?username=asc006-git&label=Profile%20Views&color=0e75b6&style=flat" />
+</p>
 
 ## Engineering Philosophy
 
@@ -27,6 +30,8 @@ Most of my current projects explore areas like:
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asc006-git&layout=compact&theme=tokyonight&hide_border=true"/>
 
 </p>
+
+## Contribution Activity
 
 ## Contribution Activity
 
@@ -62,15 +67,28 @@ timeline
     2026 : Building AI-driven authentication systems
          : Exploring backend architecture
 ```
-### SURAKSHAK — Behaviour Based Authentication
+## Contribution Snake
 
-```mermaid
-flowchart LR
-    A[User Activity] --> B[Android App]
-    B --> C[Behaviour Monitoring]
-    C --> D[ML Risk Model]
-    D --> E{Risk Level}
-    E -->|Low| F[Allow Session]
-    E -->|High| G[Re-authentication]
-```
+![Snake animation](https://github.com/asc006-git/asc006-git/blob/output/github-contribution-grid-snake.svg)
 
+## Connect With Me
+
+<p align="center">
+
+<a href="https://linkedin.com/in/YOUR_LINK">
+<img src="https://skillicons.dev/icons?i=linkedin"/>
+</a>
+
+<a href="mailto:adhyatma006@gmail.com">
+<img src="https://skillicons.dev/icons?i=gmail"/>
+</a>
+
+<a href="https://leetcode.com/YOUR_ID">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" width="50"/>
+</a>
+
+<a href="https://codeforces.com/profile/YOUR_ID">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" width="50"/>
+</a>
+
+</p>
