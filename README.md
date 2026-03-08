@@ -76,3 +76,28 @@ LeetCode: your-profile
 [2026] system.design()
 → Building AI-driven authentication systems
 ```
+
+## 🧭 Engineering Timeline
+
+```mermaid
+timeline
+    title Adhyatma Singh Chauhan — Engineering Journey
+
+    2023 : Started Computer Science Engineering
+         : Began exploring backend development
+
+    2024 : Built SURAKSHAK
+         : Behaviour-based authentication using ML
+
+    2025 : Research Conclave Winner
+         : LLM hallucination mitigation research
+
+    2025 : Smart India Hackathon
+         : Led development team
+
+    2025 : Cyber Security Hackathon
+         : Selected Top 105 teams nationwide
+
+    2026 : Building AI-driven authentication systems
+         : Exploring backend architecture
+```
