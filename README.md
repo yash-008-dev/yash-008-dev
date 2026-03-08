@@ -1,22 +1,16 @@
 <img width="1810" height="273" alt="github-header-banner" src="https://github.com/user-attachments/assets/8c91bc28-036c-4dc8-a3bf-5dd77ba023d0" />
 
-## Engineering Philosophy
+## About Me
 
-I enjoy building intelligent and secure systems that solve real-world problems.  
-My work combines **AI-driven decision systems, backend engineering, and security-focused architecture**.I approach development from a **systems perspective**—designing solutions that are scalable, automated, and resilient.
+Computer Science Engineering student focused on building **AI-driven and security-focused systems**.
+I enjoy designing **scalable backend architectures and intelligent authentication systems** that solve real-world problems.My work spans **AI verification systems, behavioural security models, and full-stack development**, with experience from hackathons, research competitions, and real project builds.
 
+Currently exploring **backend system design and machine-learning-based security solutions.**
 Most of my current projects explore areas like:
 - AI-based authentication
 - Behavioural security models
 - Automated verification systems
 - Backend architecture for intelligent applications
-
-## Current Engineering Focus
-
-- Designing AI-driven authentication systems
-- Studying backend architecture for scalable systems
-- Researching security mechanisms in intelligent applications
-- Exploring real-world uses of machine learning in authentication
 
 ## GitHub Analytics
 
@@ -32,7 +26,7 @@ Most of my current projects explore areas like:
 ## Tech Stack
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,html,css,mongodb,mysql,postgres,firebase,opencv,tensorflow,vscode,vite,linux,git,postman"/>
+<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,html,css,tailwind,mongodb,mysql,postgres,terraform,firebase,fastapi,flask,opencv,tensorflow,vscode,vite,linux,git,github,postman"/>
 </p>
 
 ## Engineering Timeline
@@ -59,9 +53,6 @@ timeline
     2026 : Building AI-driven authentication systems
          : Exploring backend architecture
 ```
-## Contribution Snake
-
-![Snake animation](https://github.com/asc006-git/asc006-git/blob/output/github-contribution-grid-snake.svg)
 
 ## Connect With Me
 
