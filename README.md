@@ -10,3 +10,47 @@ Most of my current projects explore areas like:
 - Behavioural security models
 - Automated verification systems
 - Backend architecture for intelligent applications
+
+## Current Engineering Focus
+
+- Designing AI-driven authentication systems
+- Studying backend architecture for scalable systems
+- Researching security mechanisms in intelligent applications
+- Exploring real-world uses of machine learning in authentication
+
+## Technology Stack
+
+**Languages**
+Java • JavaScript • Python
+
+**Web Development**
+HTML • CSS • React
+
+**Backend**
+Node.js • REST APIs • JWT Authentication
+
+**Databases**
+MongoDB • Firebase
+
+**Tools**
+Git • GitHub • Postman • VS Code
+
+## GitHub Analytics
+
+<p align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=asc006-git&show_icons=true&theme=tokyonight"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asc006-git&layout=compact&theme=tokyonight"/>
+
+</p>
+
+## Contribution Activity
+
+[![Adhyatma's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
+
+## Connect
+
+LinkedIn: your-link  
+Email: adhyatma006@gmail.com  
+LeetCode: your-profile
