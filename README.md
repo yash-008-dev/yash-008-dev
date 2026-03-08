@@ -54,3 +54,25 @@ Git • GitHub • Postman • VS Code
 LinkedIn: your-link  
 Email: adhyatma006@gmail.com  
 LeetCode: your-profile
+
+## Developer Timeline
+
+```bash
+[2023] system.boot()
+→ Started Computer Science Engineering
+
+[2024] build("SURAKSHAK")
+→ Behaviour-based authentication system
+
+[2025] research.publish()
+→ LLM hallucination mitigation study
+
+[2025] hackathon.run("SIH")
+→ Team leader — 1st rank institute round
+
+[2025] cyber.hackathon()
+→ Top 105 teams nationwide
+
+[2026] system.design()
+→ Building AI-driven authentication systems
+```
