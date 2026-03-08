@@ -56,6 +56,8 @@ timeline
 
 ## Connect With Me
 
+Let's connect and collaborate on AI, backend systems, and security projects.
+
 <p align="center">
 
 <a href="https://linkedin.com/in/adhyatma006">
@@ -68,13 +70,18 @@ timeline
 </a>
 &nbsp;&nbsp;&nbsp;
 
+<a href="https://github.com/asc006-git">
+<img src="https://skillicons.dev/icons?i=github" height="50"/>
+</a>
+&nbsp;&nbsp;&nbsp;
+
 <a href="https://leetcode.com/asc_006">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" height="50"/>
+<img src="https://cdn.simpleicons.org/leetcode/FFA116" height="45" style="background:#1f2937;border-radius:10px;padding:6px"/>
 </a>
 &nbsp;&nbsp;&nbsp;
 
 <a href="https://codeforces.com/profile/Adhyatma_27">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" height="50"/>
+<img src="https://cdn.simpleicons.org/codeforces/1F8ACB" height="45" style="background:#1f2937;border-radius:10px;padding:6px"/>
 </a>
 
 </p>
