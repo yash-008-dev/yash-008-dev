@@ -101,3 +101,23 @@ timeline
     2026 : Building AI-driven authentication systems
          : Exploring backend architecture
 ```
+
+## ⚙️ System Evolution
+
+```text
+v1.0 (2023)
+Core programming foundation
+
+v2.0 (2024)
+SURAKSHAK — ML authentication system
+
+v3.0 (2025)
+Research on LLM hallucination mitigation
+
+v4.0 (2025)
+Hackathon systems & AI verification
+
+v5.0 (2026)
+Building AI-driven authentication architecture
+```
+
