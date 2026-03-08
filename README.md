@@ -18,23 +18,6 @@ Most of my current projects explore areas like:
 - Researching security mechanisms in intelligent applications
 - Exploring real-world uses of machine learning in authentication
 
-## Technology Stack
-
-**Languages**
-Java • JavaScript • Python
-
-**Web Development**
-HTML • CSS • React
-
-**Backend**
-Node.js • REST APIs • JWT Authentication
-
-**Databases**
-MongoDB • Firebase
-
-**Tools**
-Git • GitHub • Postman • VS Code
-
 ## GitHub Analytics
 
 <p align="center">
@@ -47,13 +30,9 @@ Git • GitHub • Postman • VS Code
 
 ## Contribution Activity
 
-[![Adhyatma's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
-
-## Contribution Activity
-
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 <p align="center">
 <img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,mongodb,firebase,linux,git,postman"/>
@@ -82,5 +61,16 @@ timeline
 
     2026 : Building AI-driven authentication systems
          : Exploring backend architecture
+```
+### SURAKSHAK — Behaviour Based Authentication
+
+```mermaid
+flowchart LR
+    A[User Activity] --> B[Android App]
+    B --> C[Behaviour Monitoring]
+    C --> D[ML Risk Model]
+    D --> E{Risk Level}
+    E -->|Low| F[Allow Session]
+    E -->|High| G[Re-authentication]
 ```
 
