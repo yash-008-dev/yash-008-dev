@@ -1,21 +1,4 @@
 <img width="1810" height="273" alt="github-header-banner" src="https://github.com/user-attachments/assets/8c91bc28-036c-4dc8-a3bf-5dd77ba023d0" />
-## 📊 Developer Metrics
-
-<p align="center">
-
-<img src="https://komarev.com/ghpvc/?username=asc006-git&label=Profile+Views&style=for-the-badge"/>
-
-<img src="https://img.shields.io/github/followers/asc006-git?style=for-the-badge"/>
-
-<img src="https://img.shields.io/github/stars/asc006-git?style=for-the-badge"/>
-
-</p>
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=asc006-git&show_icons=true&theme=tokyonight"/>
-
-</p>
 
 ## Engineering Philosophy
 
@@ -84,7 +67,7 @@ timeline
 
 <p align="center">
 
-<a href="https://linkedin.com/in/YOUR_LINK">
+<a href="https://linkedin.com/in/adhyatma006">
 <img src="https://skillicons.dev/icons?i=linkedin"/>
 </a>
 
@@ -96,7 +79,7 @@ timeline
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" width="50"/>
 </a>
 
-<a href="https://codeforces.com/profile/YOUR_ID">
+<a href="https://codeforces.com/profile/Adhyatma_27">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" width="50"/>
 </a>
 
