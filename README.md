@@ -24,20 +24,9 @@ Most of my current projects explore areas like:
 ## GitHub Analytics
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=asc006-git&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="180"/>
-</p>
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asc006-git&layout=compact&theme=tokyonight&hide_border=true" height="180"/>
-</p>
-
-<p align="center">
 <img src="https://streak-stats.demolab.com/?user=asc006-git&theme=tokyonight&hide_border=true"/>
 </p>
 
-## 📈 Contribution Activity
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night&hide_border=true)](https://github.com/)
 
 ## Contribution Activity
 
@@ -46,7 +35,7 @@ Most of my current projects explore areas like:
 ## Tech Stack
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,mongodb,firebase,linux,git,postman"/>
+<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,html,css,mongodb,mysql,postgres,firebase,opencv,tensorflow,vscode,vite,linux,git,postman"/>
 </p>
 
 ## Engineering Timeline
@@ -89,7 +78,7 @@ timeline
 <img src="https://skillicons.dev/icons?i=gmail"/>
 </a>
 
-<a href="https://leetcode.com/YOUR_ID">
+<a href="https://leetcode.com/asc_006">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" width="50"/>
 </a>
 
