@@ -1,35 +1,24 @@
 <img width="1810" height="273" alt="github-header-banner" src="https://github.com/user-attachments/assets/8c91bc28-036c-4dc8-a3bf-5dd77ba023d0" />
 
 ## About Me
+- Computer Science Engineering student focused on **AI-driven and security-focused systems**
+- Interested in **backend architecture, authentication systems, and intelligent automation**
+- Experience building **AI verification platforms and behavioural security models**
+- Active in **hackathons and research competitions**
+- Currently exploring **system design and ML-based security solutions**
 
-Computer Science Engineering student focused on building **AI-driven and security-focused systems**.
-I enjoy designing **scalable backend architectures and intelligent authentication systems** that solve real-world problems.My work spans **AI verification systems, behavioural security models, and full-stack development**, with experience from hackathons, research competitions, and real project builds.
-
-Currently exploring **backend system design and machine-learning-based security solutions.**
-Most of my current projects explore areas like:
-- AI-based authentication
-- Behavioural security models
-- Automated verification systems
-- Backend architecture for intelligent applications
-
-## GitHub Analytics
-
-<p align="center">
-<img src="https://streak-stats.demolab.com/?user=asc006-git&theme=tokyonight&hide_border=true"/>
-</p>
-
-
-## Contribution Activity
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
+### Open To
+- Collaborating on **AI / backend / security projects**
+- Research and hackathon opportunities
+- Open-source contributions
 
 ## Tech Stack
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,html,css,tailwind,mongodb,mysql,postgres,terraform,firebase,fastapi,flask,opencv,tensorflow,vscode,vite,linux,git,github,postman"/>
+<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,html,css,tailwind,mongodb,mysql,postgres,terraform,firebase,fastapi,flask,opencv,tensorflow,vscode,vite,linux,git,github,postman&perline=12"/>
 </p>
 
-## Engineering Timeline
+## Engineering Journey
 
 ```mermaid
 timeline
@@ -54,24 +43,38 @@ timeline
          : Exploring backend architecture
 ```
 
+
+## GitHub Analytics
+
+<p align="center">
+<img src="https://streak-stats.demolab.com/?user=asc006-git&theme=tokyonight&hide_border=true"/>
+</p>
+
+## Contribution Activity
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
+
 ## Connect With Me
 
 <p align="center">
 
 <a href="https://linkedin.com/in/adhyatma006">
-<img src="https://skillicons.dev/icons?i=linkedin"/>
+<img src="https://skillicons.dev/icons?i=linkedin" height="50"/>
 </a>
+&nbsp;&nbsp;&nbsp;
 
 <a href="mailto:adhyatma006@gmail.com">
-<img src="https://skillicons.dev/icons?i=gmail"/>
+<img src="https://skillicons.dev/icons?i=gmail" height="50"/>
 </a>
+&nbsp;&nbsp;&nbsp;
 
 <a href="https://leetcode.com/asc_006">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" width="50"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" height="50"/>
 </a>
+&nbsp;&nbsp;&nbsp;
 
 <a href="https://codeforces.com/profile/Adhyatma_27">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" width="50"/>
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" height="50"/>
 </a>
 
 </p>
