@@ -1,6 +1,20 @@
 <img width="1810" height="273" alt="github-header-banner" src="https://github.com/user-attachments/assets/8c91bc28-036c-4dc8-a3bf-5dd77ba023d0" />
+## 📊 Developer Metrics
+
 <p align="center">
-<img src="https://komarev.com/ghpvc/?username=asc006-git&label=Profile%20Views&color=0e75b6&style=flat" />
+
+<img src="https://komarev.com/ghpvc/?username=asc006-git&label=Profile+Views&style=for-the-badge"/>
+
+<img src="https://img.shields.io/github/followers/asc006-git?style=for-the-badge"/>
+
+<img src="https://img.shields.io/github/stars/asc006-git?style=for-the-badge"/>
+
+</p>
+
+<p align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=asc006-git&show_icons=true&theme=tokyonight"/>
+
 </p>
 
 ## Engineering Philosophy
