@@ -49,35 +49,17 @@ Git • GitHub • Postman • VS Code
 
 [![Adhyatma's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
 
-## Connect
+## Contribution Activity
 
-LinkedIn: your-link  
-Email: adhyatma006@gmail.com  
-LeetCode: your-profile
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&theme=tokyo-night)](https://github.com/)
 
-## Developer Timeline
+## ⚙️ Tech Stack
 
-```bash
-[2023] system.boot()
-→ Started Computer Science Engineering
+<p align="center">
+<img src="https://skillicons.dev/icons?i=java,js,python,react,nodejs,express,mongodb,firebase,linux,git,postman"/>
+</p>
 
-[2024] build("SURAKSHAK")
-→ Behaviour-based authentication system
-
-[2025] research.publish()
-→ LLM hallucination mitigation study
-
-[2025] hackathon.run("SIH")
-→ Team leader — 1st rank institute round
-
-[2025] cyber.hackathon()
-→ Top 105 teams nationwide
-
-[2026] system.design()
-→ Building AI-driven authentication systems
-```
-
-## 🧭 Engineering Timeline
+## Engineering Timeline
 
 ```mermaid
 timeline
@@ -100,24 +82,5 @@ timeline
 
     2026 : Building AI-driven authentication systems
          : Exploring backend architecture
-```
-
-## ⚙️ System Evolution
-
-```text
-v1.0 (2023)
-Core programming foundation
-
-v2.0 (2024)
-SURAKSHAK — ML authentication system
-
-v3.0 (2025)
-Research on LLM hallucination mitigation
-
-v4.0 (2025)
-Hackathon systems & AI verification
-
-v5.0 (2026)
-Building AI-driven authentication architecture
 ```
 
