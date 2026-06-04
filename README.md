@@ -16,49 +16,6 @@ NeuroLearn AI is a production-grade, highly immersive educational assistant desi
 
 ---
 
-## 🔗 Live Demo & Deployment
-
-- **Production URL:** [neurolearn-ai.vercel.app](https://neurolearn-ai.vercel.app) *(Example Production Link)*
-- **Development URL:** [http://localhost:3000](http://localhost:3000)
-- **FastAPI Core Engine URL:** [http://localhost:8000](http://localhost:8000)
-
-### 📸 Application Interface Preview
-
-```text
-+-----------------------------------------------------------------------------+
-|  [Logo] NEUROLEARN AI                          [User profile] [Settings]   |
-+-----------------------------------------------------------------------------+
-|                                                                             |
-|   +------------------------------------+   +----------------------------+   |
-|   |         Ingestion Pipeline         |   |    Cognitive Telemetry     |   |
-|   |  [ Drag & Drop PDF to Ingest ]     |   |                            |   |
-|   |  - Real-Time Ingestion Status (SSE)|   |  [3.5h] Deep Work Hours    |   |
-|   |  - Upload, Parse, OCR fallbacks    |   |  [24] Concepts Mastered    |   |
-|   |  - Chunking & Ingestion Logs       |   |  [142] Synapses Formed     |   |
-|   +------------------------------------+   +----------------------------+   |
-|                                                                             |
-|   +---------------------------------------------------------------------+   |
-|   |                      Interactive Knowledge Map                      |   |
-|   |                                                                     |   |
-|   |           Concepts o----------o (Root Node) ----------o Tech        |   |
-|   |                      \                               /              |   |
-|   |                       o--- Architecture             o--- Workflow   |   |
-|   |                                                                     |   |
-|   |     (Calculated D3 2D Spatial Coordinates | Click nodes to expand)  |   |
-|   +---------------------------------------------------------------------+   |
-|                                                                             |
-|   +--------------------+  +----------------------+  +-------------------+   |
-|   |    Smart Notes     |  | Active Recall Quizzes|  | AI Assistant Orb  |   |
-|   | - Definitions      |  | - Scenario MCQs      |  | - Document chat   |   |
-|   | - Tech Stack       |  | - True / False       |  | - Context aware   |   |
-|   | - Revision Sheets  |  | - Fill-in-the-Blank  |  | - Floating UI     |   |
-|   +--------------------+  +----------------------+  +-------------------+   |
-|                                                                             |
-+-----------------------------------------------------------------------------+
-|  [Home]  [Documents]  [Summaries]  [Smart Notes]  [Quiz Lab]  [Analytics]   |
-+-----------------------------------------------------------------------------+
-```
-
 ---
 
 ## 🛠️ Tech Stack & Architecture
