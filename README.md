@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/Visit-NeuroLearn-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white"/>
   </a>
 </p>
-```md
+
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.6-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
