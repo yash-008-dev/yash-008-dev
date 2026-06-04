@@ -1,62 +1,89 @@
-# 🧠 NeuroLearn AI
+# NeuroLearn 
 
-NeuroLearn AI is an open-source, full-stack learning platform designed to ingest unstructured PDF documents (textbooks, research papers, study notes) and automatically synthesize them into dynamic, interactive study guides. The system features real-time progress updates, visual concept relationship mapping, active recall assessments, and a context-aware chat assistant grounded in your documents.
+> Cinematic AI-Powered Document Comprehension & Active Recall Learning System
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_NeuroLearn-success?style=for-the-badge)](https://neurolearn-ai.vercel.app)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/your-username/NeuroLearn-AI)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-5.22.0-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Enabled-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-2.0_Flash-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://aistudio.google.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-[![Next.js Version](https://img.shields.io/badge/Next.js-16.2.6-000000?style=flat&logo=nextdotjs)](https://nextjs.org/)
-[![React Version](https://img.shields.io/badge/React-19.2.5-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.0-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
-[![Prisma ORM](https://img.shields.io/badge/Prisma-5.22.0-2D3748?style=flat&logo=prisma)](https://www.prisma.io/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat&logo=postgresql)](https://www.postgresql.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Enabled-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![Google Gemini API](https://img.shields.io/badge/Google_Gemini-2.0_Flash-4285F4?style=flat&logo=googlegemini)](https://aistudio.google.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT)
-
----
-
-## 📖 Project Overview
-
-NeuroLearn AI transforms unstructured educational PDFs into highly structured study materials. The platform processes documents via a dual-layered Next.js and FastAPI ingestion pipeline, leverages Google Gemini API for semantic synthesis and quiz generation, and builds an interactive 2D visualization graph of the extracted concepts.
+NeuroLearn AI is a full-stack learning platform designed to ingest unstructured PDF documents (textbooks, research papers, reports) and automatically synthesize them into dynamic, interactive study guides. Built with **Next.js 16**, **React 19**, and a standalone **FastAPI document service**, the application features real-time progress tracking, visual concept relationship mapping, active recall assessments, and a context-aware chat assistant.
 
 ---
 
-## ✨ Key Features
+## Project Summary
 
-- **Document Ingestion Pipeline**: Processes PDF uploads (up to 20MB) with local extraction fallbacks. Streams progress real-time from the backend to the UI via Server-Sent Events (SSE).
-- **Multi-Strategy Text Extraction**: Employs standard in-app text parsing (`pdf-parse`) and routes scanned or image-heavy documents to a Python FastAPI service using `PyMuPDF`, `pdfplumber`, and `Tesseract OCR`.
-- **AI-Powered Synthesizer**: Uses `gemini-2.0-flash` to generate detailed summaries, TLDRs, project objectives, key findings, chapter-by-chapter breakdowns, advantages, limitations, and future scope.
-- **Dynamic 2D Knowledge Maps**: Generates coordinates to map out relationships between concepts, technologies, system architectures, workflows, and future scopes.
-- **Smart Study Notes**: Automatically populates note databases containing concept cards, definition indexes, system architecture descriptions, and exam-oriented revision notes.
-- **Active Recall Quizzes**: Creates test questions spanning 8 formats (MCQs with explanations for wrong answers, Fill-in-the-Blank, True/False, Match, Short Answer, Scenarios, and Applications).
-- **Grounded Chat Assistant**: Context-aware floating assistant allowing you to chat directly with your document libraries. It feeds summaries and user-generated notes into the context window.
-- **Study Analytics & Progress Telemetry**: Tracks active focus hours, mastered concepts, quizzes taken, and logs study history sessions.
-
----
-
-## 📸 Screenshots
-
-### Dashboard
-![Dashboard](docs/screenshots/dashboard.png)
-
-### Knowledge Map
-![Knowledge Map](docs/screenshots/knowledge-map.png)
-
-### Quiz Generator
-![Quiz Generator](docs/screenshots/quiz-generator.png)
+**NeuroLearn**
+*Developed a cinematic AI-driven document comprehension and active recall system.*
+- **Ingestion & Text Processing**: Engineered a robust document pipeline combining a Next.js server side text parser with a FastAPI microservice implementing PyMuPDF, pdfplumber, and Tesseract OCR fallbacks for scanned documents.
+- **AI Core Integration**: Integrated Google Gemini API (`gemini-2.0-flash`) via structural JSON schemas to synthesize summaries, extract conceptual definitions, and compile active recall assessments.
+- **Hybrid NLP Fallback**: Authored an extractive local NLP fallback engine performing structural layout analysis, entity frequency detection, and sentence scoring to maintain full system functionality offline.
+- **Data Visualization**: Architected an interactive 2D spatial coordinate mapping generator using D3.js and Recharts, translating document concepts and tech stacks into a connected visual knowledge graph.
+- **Security & Infrastructure**: Implemented cryptographic timing-safe CSRF validations, sliding-window rate-limiting, and multi-stage Docker configurations orchestrating Next.js, Python, and PostgreSQL.
 
 ---
 
-## 📊 System Architecture & Workflow
+## ✨ Key Highlights
 
-### System Architecture Diagram
-The flowchart below outlines the request lifecycle from the client interface, passing through authentication, the API routing layer, down to the database, AI model service, and visualization engine.
+- **Real-Time Pipeline Status**: Streams ingestion logs (Uploading → Extracting → Processing → Summaries → Notes → Quizzes) to the browser using Server-Sent Events (SSE).
+- **Extensive Knowledge Graphing**: Spatially maps concepts, architectures, and technologies into interactive SVG coordinate maps.
+- **Active Recall Engine**: Generates 8 distinct question types (MCQs with explanations for wrong answers, Fill-in-the-Blank, True/False, Scenarios, and Applications).
+- **Grounding Chat Assistant**: Integrates user notes and document contents directly into the system prompts to ensure responses are fully grounded in the materials.
 
+---
+
+## 📸 Interface Showcases
+
+| Dashboard Hub | Interactive Knowledge Map |
+| :---: | :---: |
+| ![Dashboard Showcase](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80)<br>*Ingestion & Telemetry Dashboard* | ![Knowledge Map Showcase](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)<br>*D3 Conceptual Graph visualization* |
+
+| Smart Study Notes | Active Recall Studio |
+| :---: | :---: |
+| ![Smart Notes Showcase](https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80)<br>*Concept Cards & Revision Notes* | ![Active Recall Quiz Showcase](https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80)<br>*Dynamic multi-format assessments* |
+
+---
+
+## 🎨 Feature Showcase Cards
+
+```carousel
+### 📂 Ingestion Pipeline
+- **Parallel Fallbacks**: Routes PDF content through localized parsers, falling back to deep Tesseract OCR analysis if a scanned PDF is detected.
+- **SSE Telemetry**: Continuously pushes real-time pipeline status steps straight to the UI.
+- **Binary Recovery**: Stores raw PDF bytes in PostgreSQL so documents can be reprocessed without requiring re-upload.
+<!-- slide -->
+### 🕸️ Knowledge Maps
+- **2D Node Coordination**: Computes circular and spatial angular positions to form clean layout structures.
+- **Structural Grouping**: Automatically clusters generated nodes into Concepts, Technologies, Workflows, and Architecture.
+- **D3 Dynamic Visuals**: Renders nodes interactively using React, D3, and SVG connections.
+<!-- slide -->
+### 📝 Active Recall & Chat
+- **Deep Explanations**: Quizzes include explanations for why the correct option is correct, as well as separate descriptions for each wrong option.
+- **Structured Note Generation**: Automatically creates and classifies cards for Concepts, Definitions, Technologies, and Architectures.
+- **Grounding Prompts**: Feeds recently updated notes and summaries directly into Gemini's context window.
+```
+
+---
+
+## 🏆 Hackathon & Portfolio Appeal
+
+- **Cinematic Aesthetic**: Styled with a bespoke, dark-themed custom system (`bg-void`, `bg-deep`, `neural-glass`) using Tailwind CSS 4.0, combined with Framer Motion physics.
+- **Production-Grade Infrastructure**: Demonstrates professional code structure, separate database layers, custom rate limiters, robust type definitions, and Docker multi-stage configurations.
+- **Reliable Fallback Design**: Unlike simple API wrapper projects, NeuroLearn AI runs fully offline when external APIs are missing, falling back to local NLP processors.
+
+---
+
+## 📊 System Diagrams
+
+### 1. System Architecture
 ```mermaid
 flowchart TD
     User([User Client]) -->|Interacts with UI| FE[Frontend: Next.js 16 + React 19]
-    FE -->|Requests / Submissions| Auth{Authentication Gateway\nNextAuth.js / Google OAuth}
+    FE -->|Requests / Submissions| Auth{Authentication Gate\nNextAuth.js / Google OAuth}
     Auth -->|Authorized Session| API[API Routing Layer: Next.js API Routes]
     Auth -->|Session Denied| Login[Auth Login Interface]
     API -->|Rate Limits & CSRF Validated| CSRF{RateLimiter & CSRF check}
@@ -72,9 +99,7 @@ flowchart TD
     D3 -->|Stream Visual Telemetry| FE
 ```
 
-### Document Processing Ingestion Pipeline
-This flowchart details how uploaded documents are processed and saved, including the fallbacks and SSE message logs.
-
+### 2. Document Processing & Ingestion Pipeline
 ```mermaid
 flowchart TD
     Upload[PDF Document Upload\nValidation <= 20MB] --> Status_Log[Write Status: 'Uploading']
@@ -103,31 +128,18 @@ flowchart TD
 
 ---
 
-## 📁 Project Structure
+## 📁 Folder Structure & Subsystems
 
 ```text
 ├── prisma/
-│   ├── migrations/               # Database SQL schema migration history
-│   └── schema.prisma             # PostgreSQL schema models definitions
-├── server/                       # FastAPI document microservice
+│   └── schema.prisma             # PostgreSQL schema models (User, Document, Summary, Note, Quiz, etc.)
+├── server/                       # FastAPI document service
 │   ├── main.py                   # FastAPI service endpoints (PyMuPDF, pdfplumber, pytesseract)
-│   ├── requirements.txt          # Python package requirements
 │   └── Dockerfile                # Docker build configuration for Python service
 ├── src/                          # Next.js application source
-│   ├── app/                      # App Router layouts, views, and REST API endpoints
-│   ├── components/               # UI components (Floating Assistant orb, Background canvas, Navigation docks)
-│   │   ├── Assistant/            # Floating interactive AI assistant
-│   │   ├── Background/           # Immersive canvas-drawn neural connection background
-│   │   ├── Layout/               # Page wrapper layouts
-│   │   ├── Navigation/           # Glassmorphic QuantumDock and TopNavbar navigation
-│   │   └── Workspace/            # Ingestion upload areas and progress indicators
-│   └── lib/                      # Business logic utilities
-│       ├── ai-engine.ts          # Core AI coordinator (Gemini API & local NLP fallback)
-│       ├── db.ts                 # Prisma client instance
-│       ├── auth.ts               # NextAuth setup supporting Credentials & Google OAuth callbacks
-│       ├── csrf.ts               # Timing-safe CSRF validation middleware
-│       ├── rate-limit.ts         # Sliding-window rate limiter
-│       └── knowledge-map-generator.ts # D3 node positioning coordinator
+│   ├── app/                      # App Router: layout, dashboard views, and REST API endpoints
+│   ├── components/               # Floating Assistant orb, Neural Background canvas, QuantumDock navigation
+│   └── lib/                      # AI Engine (Gemini/NLP), NextAuth, CSRF, Rate Limiting, Map Generator
 ```
 
 ---
@@ -137,11 +149,11 @@ flowchart TD
 | Endpoint | Method | Authentication | Description |
 | :--- | :--- | :--- | :--- |
 | `/api/auth/[signup/forgot-password...]`| `POST` | Public | Handles signup, password-reset, and email validations. |
-| `/api/upload` | `POST` | User | Ingests PDF document and streams status events via SSE. |
-| `/api/chat` | `POST` | User | Context-aware chat grounded in your uploaded documents and notes. |
+| `/api/upload` | `POST` | User | unified PDF ingestion pipeline streaming progress via SSE. |
+| `/api/chat` | `POST` | User | Grounded, context-aware chatbot using Gemini Flash. |
 | `/api/documents` | `GET`/`DELETE` | User | Lists and deletes document records. |
 | `/api/documents/[id]` | `GET`/`POST`/`PATCH` | User | Fetches details, reprocesses parser texts, or edits metadata. |
-| `/api/notes` | `GET`/`POST`/`PUT`/`DELETE`| User | CRUD actions for study notes. |
+| `/api/notes` | `GET`/`POST`/`PUT`/`DELETE`| User | CRUD actions for user and AI study notes. |
 | `/api/quizzes` | `GET`/`POST` | User | Lists quizzes and updates telemetry scores. |
 | `/api/knowledge-map` | `GET` | User | Fetches calculated X/Y node coordinate arrays. |
 | `/api/analytics` | `GET` | User | Aggregates focus duration, efficiency, and diagnosis. |
@@ -149,94 +161,79 @@ flowchart TD
 
 ---
 
-## 🛠️ Local Development & Setup
+## 📦 Installation & Setup
 
-### Prerequisites
-- **Node.js 20+**
-- **Python 3.10+** (if running document service locally)
-- **Tesseract OCR** (installed and added to path if utilizing local OCR)
-- **PostgreSQL** database (or docker running postgres)
+Ensure you have **Node.js 20+**, **Python 3.10+**, and **Docker** installed.
 
-### 1. Clone the Repository
+### 1. Repository Setup & Dependencies
 ```bash
-git clone https://github.com/your-username/NeuroLearn-AI.git
-cd NeuroLearn-AI
-```
+# Clone the repository
+git clone https://github.com/asc006-git/NeuroLearn.git
+cd NeuroLearn
 
-### 2. Install Dependencies
-```bash
-# Install Next.js frontend dependencies
+# Install Next.js dependencies
 npm install
 
-# Install FastAPI document service dependencies
+# Install FastAPI dependencies
 cd server
 pip install -r requirements.txt
 cd ..
 ```
 
-### 3. Configure the Environment
-Copy the example environment template and configure your values:
+### 2. Database Migration
 ```bash
-cp .env.example .env
-```
-Ensure you update the `DATABASE_URL` and `GOOGLE_API_KEY` (Gemini API key).
+# Copy env variables template
+cp .env.example 
 
-### 4. Database Setup & Migrations
-Sync your PostgreSQL database schema with Prisma:
-```bash
+# Configure your connection string (DATABASE_URL) in .env, then run:
 npx prisma db push
 npx prisma generate
 ```
 
-### 5. Running the Application Locally
+### 3. Running Locally
+Run Next.js and FastAPI separately, or coordinate them via Docker Compose:
 
-#### Terminal 1: Run Next.js App
+#### Separate Terminals:
 ```bash
+# Terminal 1: Run Next.js
 npm run dev
-```
-The Next.js app will be accessible at `http://localhost:3000`.
 
-#### Terminal 2: Run FastAPI Document Service
-```bash
+# Terminal 2: Run FastAPI Document Service
 cd server
 python main.py
 ```
-The document extraction service will run at `http://localhost:8000`.
 
----
-
-## 🐳 Running with Docker Compose
-
-NeuroLearn AI can be orchestrated with a single command using Docker Compose:
-
+#### Run via Docker Compose:
 ```bash
 docker-compose up --build
 ```
-This command starts three containers:
-- **`neurolearn-db`**: PostgreSQL 16 database mapping port `5432`
-- **`neurolearn-app`**: Next.js Node app mapping port `3000`
-- **`neurolearn-fastapi`**: Python document extractor mapping port `8000`
+The application will launch on `http://localhost:3000`, the database on port `5432`, and the FastAPI backend on `http://localhost:8000`.
 
 ---
 
-## 🛠️ Environment Configuration Matrix
+## 🚀 Deployment Guide (Production)
 
-| Environment Variable | Description | Default / Example Value |
-| :--- | :--- | :--- |
-| `DATABASE_URL` | PostgreSQL database connection string | `postgresql://neurolearn:password@postgres:5432/neurolearn` |
-| `NEXTAUTH_URL` | Application root URL for NextAuth session callbacks | `http://localhost:3000` |
-| `NEXTAUTH_SECRET` | Secret key for encrypting JWT tokens | `generate-using-openssl-rand` |
-| `GOOGLE_CLIENT_ID` | Client identifier for Google OAuth login | `google-oauth-client-id` |
-| `GOOGLE_CLIENT_SECRET`| Client secret for Google OAuth authentication | `google-oauth-client-secret` |
-| `GOOGLE_API_KEY` | Google Gemini API Studio key (Flash calls) | `AIzaSy...` |
-| `NEXT_PUBLIC_AI_SERVICE_URL`| Browser endpoint redirecting to FastAPI | `http://127.0.0.1:8000` |
-| `FASTAPI_URL` | Server-to-server endpoint for Next.js to FastAPI | `http://127.0.0.1:8000` |
-| `SMTP_HOST` | Outgoing SMTP mail server host for password resets | `smtp.ethereal.email` |
-| `SMTP_PORT` | Outgoing SMTP mail port | `587` |
-| `SMTP_SECURE` | Set to true if utilizing SSL for mail connections | `false` |
-| `SMTP_USER` | SMTP server username | `smtp-user-email` |
-| `SMTP_PASS` | SMTP server password | `smtp-user-password` |
-| `SMTP_FROM` | Default sender display email | `noreply@neurolearn.ai` |
+### 1. Neon Database Setup
+1. Create a database project on [Neon Database](https://neon.tech).
+2. Retrieve the connection string (`DATABASE_URL`).
+3. Set the `DATABASE_URL` in your production environment variables.
+
+### 2. Google OAuth Configuration
+1. Go to the [Google Cloud Console](https://console.cloud.google.com).
+2. Configure your OAuth consent screen and create an OAuth 2.0 Client ID.
+3. Add `https://your-domain.com/api/auth/callback/google` to the Authorized Redirect URIs list.
+4. Copy `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
+
+### 3. Vercel Deployment
+1. Log in to Vercel and create a new project.
+2. Select your repository, configure environment variables, and set:
+   - **Build Command**: `prisma generate && next build`
+   - **Output Directory**: `.next`
+3. Add the Vercel project domain URL to your `NEXTAUTH_URL` environment variable.
+
+### 4. Deploying the FastAPI Parser
+1. Deploy the FastAPI service using the provided Dockerfile in `/server` to Render or Fly.io.
+2. Set your production FastAPI service deployment URL as the `NEXT_PUBLIC_AI_SERVICE_URL` and `FASTAPI_URL` environment variables on Vercel.
 
 ---
 
@@ -247,5 +244,5 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 ---
 
 <p align="center">
-  <span>© 2026 NeuroLearn AI. Syncing telemetry and enhancing active recall.</span>
+  <span>© 2026 NeuroLearn AI. Syncing Cognitive Telemetry and Enhancing Active Recall.</span>
 </p>
