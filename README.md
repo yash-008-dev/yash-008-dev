@@ -310,7 +310,7 @@ traffic-demand-prediction/
 
 ## Author
 
-**Adhyatma**
+**Adhyatma Singh Chauhan**
 
 Machine Learning • Data Science • Software Development
 
