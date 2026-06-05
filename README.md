@@ -1,380 +1,402 @@
-# NeuroLearn 
+# Traffic Demand Prediction Using Geospatial, Temporal, and Environmental Features
 
-> AI-Powered Document Comprehension & Learning Assistant
+<div align="center">
 
-<p align="center">
-  <a href="https://neuro-learn-delta.vercel.app">
-    <img src="https://img.shields.io/badge/Visit-NeuroLearn-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white"/>
-  </a>
-</p>
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![CatBoost](https://img.shields.io/badge/CatBoost-FFCC00?style=for-the-badge)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
+</div>
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Prisma](https://img.shields.io/badge/Prisma-5.22.0-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.100.0-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Google Gemini](https://img.shields.io/badge/Google_Gemini-2.0_Flash-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://aistudio.google.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+<div align="center">
 
+Geospatial Analytics • Traffic Forecasting • Machine Learning • Feature Engineering • Regression Modeling
 
-
-NeuroLearn is an AI-powered document learning platform that transforms PDF documents into structured summaries, notes, quizzes, and knowledge maps using Google Gemini and OCR-based document extraction.
+</div>
 
 ---
 
-## Tech Stack & Architecture
+## Overview
 
-- **Frontend Core**: Next.js 16 (using App Router and Turbopack compiler) & React 19
-- **Design System**: Vanilla CSS with Tailwind CSS 4.0 (leveraging the `@theme` directive, custom `@layer base` Saturn-inspired variables, and Framer Motion 12.0 for cinematic spring transitions)
-- **Data Visualizations**: Recharts & D3.js (used to construct the interactive 2D spatial knowledge coordinate system)
-- **Primary Database**: PostgreSQL hosted on Neon DB, managed via Prisma ORM
-- **Authentication**: NextAuth.js (configured with Credentials + Google OAuth providers)
-- **AI Core**: Google Gemini API (`gemini-2.0-flash` endpoint) + Python FastAPI microservice (housing PyMuPDF, pdfplumber, and Tesseract OCR)
-- **Security Protocols**: Timing-safe CSRF cookie validations, in-memory sliding window rate-limiters, and Zod input sanitization
+Traffic congestion remains one of the most critical challenges in modern urban transportation systems. Accurate traffic demand forecasting enables transportation authorities, ride-sharing platforms, logistics providers, and city planners to optimize infrastructure utilization, improve route planning, reduce congestion, and enhance commuter experiences.
+
+This project presents an end-to-end machine learning solution for predicting traffic demand using a combination of:
+
+- Geospatial information
+- Temporal patterns
+- Road infrastructure characteristics
+- Environmental conditions
+- Traffic-related contextual features
+
+The solution leverages advanced feature engineering and gradient boosting techniques to capture nonlinear relationships influencing traffic flow and demand.
 
 ---
 
-## System Diagrams
+## Problem Statement
 
-### 1. System Architecture Flowchart
-This diagram outlines the request lifecycle from the client dashboard, passing through the secure NextAuth gateway, down to the database layers, AI processors, and D3 analytics engine.
+The objective of this project is to predict traffic demand for a given location and timestamp using historical transportation and environmental data.
 
-```mermaid
-flowchart LR
+Each observation contains:
 
-User([User])
+- Geographical location encoded using geohashes
+- Temporal information
+- Road network characteristics
+- Environmental attributes
+- Traffic-related contextual features
 
-subgraph Frontend
-    FE[Next.js + React]
-end
+The target variable is a continuous demand score representing expected traffic intensity at a specific location and time.
 
-subgraph Authentication
-    Auth[NextAuth + Google OAuth]
-end
+### Evaluation Metric
 
-subgraph Backend
-    API[API Routes]
-    Security[CSRF + Rate Limiter]
-end
+Model performance is evaluated using the **Coefficient of Determination (R² Score)**.
 
-subgraph AI_Processing
-    Engine[AI Engine]
-    Gemini[Gemini 2.0 Flash]
-    FastAPI[FastAPI OCR Service]
-    D3[D3 Knowledge Map]
-end
+A higher R² score indicates better predictive capability and stronger generalization on unseen data.
 
-subgraph Database
-    Prisma[Prisma ORM]
-    DB[(PostgreSQL / Neon)]
-end
+---
 
-User --> FE
-FE --> Auth
-Auth --> API
-API --> Security
-Security --> Engine
+## Dataset Overview
 
-Engine --> Gemini
-Engine --> FastAPI
-Engine --> Prisma
+### Training Dataset
 
-Prisma --> DB
+| Property | Value |
+|-----------|---------|
+| Records | 77,299 |
+| Features | 10 |
+| Target Variable | demand |
 
-Gemini --> Engine
-FastAPI --> Engine
+### Test Dataset
 
-Engine --> D3
-D3 --> FE
+| Property | Value |
+|-----------|---------|
+| Records | 41,778 |
+| Features | 10 |
+
+---
+
+## Feature Description
+
+| Feature | Description |
+|----------|-------------|
+| Index | Unique identifier |
+| geohash | Encoded geographical location |
+| day | Day identifier |
+| timestamp | Time at which observation was recorded |
+| RoadType | Type of nearby road |
+| NumberofLanes | Number of available traffic lanes |
+| LargeVehicles | Whether large vehicles are permitted |
+| Landmarks | Presence of nearby landmarks |
+| Temperature | Environmental temperature |
+| Weather | Weather condition |
+| demand | Traffic demand score (Target Variable) |
+
+---
+
+## Exploratory Data Analysis
+
+Comprehensive exploratory data analysis was conducted to understand:
+
+- Missing value distributions
+- Feature cardinality
+- Temporal traffic patterns
+- Spatial demand variations
+- Target variable behavior
+- Correlations among numerical features
+
+### Key Findings
+
+#### High Geographical Diversity
+
+The dataset contains more than 1200 unique geohash locations, indicating strong spatial variation in traffic behavior.
+
+#### Missing Values
+
+Missing values were observed in:
+
+- RoadType
+- Temperature
+- Weather
+
+These were handled using robust statistical imputation strategies.
+
+#### Target Distribution
+
+The demand variable exhibited:
+
+- Positive skewness
+- Long-tail behavior
+- Dense concentration near lower demand values
+
+To improve learning stability, a logarithmic transformation was applied.
+
+---
+
+## Data Preprocessing Pipeline
+
+### Missing Value Treatment
+
+#### Numerical Features
+
+Median imputation:
+
+- Temperature
+
+#### Categorical Features
+
+Mode imputation:
+
+- RoadType
+- Weather
+
+---
+
+### Timestamp Decomposition
+
+The timestamp column was decomposed into:
+
+- Hour
+- Minute
+
+to capture intra-day traffic fluctuations.
+
+---
+
+### Cyclical Time Encoding
+
+To preserve temporal continuity:
+
+```python
+hour_sin = np.sin(2 * np.pi * hour / 24)
+hour_cos = np.cos(2 * np.pi * hour / 24)
 ```
 
-### 2. Document Processing & Ingestion Pipeline
-This diagram traces the lifecycle of a document from file upload validation down to real-time status emissions via SSE streams, database writes, and visual analytics.
-
-```mermaid
-flowchart LR
-
-Upload[PDF Upload]
-
-Parse[pdf-parse]
-Check{Enough Text?}
-
-PyMuPDF[PyMuPDF]
-Check2{Text >= 50?}
-
-Plumber[pdfplumber]
-Check3{Text >= 50?}
-
-OCR[Tesseract OCR]
-
-Clean[Clean & Normalize Text]
-Chunk[Semantic Chunking]
-
-Gemini[Gemini 2.0 Flash]
-
-Summary[Generate Summary]
-Notes[Generate Notes]
-Quiz[Generate Quiz]
-Map[Generate Knowledge Map]
-
-DB[(Database)]
-
-Upload --> Parse
-Parse --> Check
-
-Check -->|Yes| Clean
-Check -->|No| PyMuPDF
-
-PyMuPDF --> Check2
-
-Check2 -->|Yes| Clean
-Check2 -->|No| Plumber
-
-Plumber --> Check3
-
-Check3 -->|Yes| Clean
-Check3 -->|No| OCR
-
-OCR --> Clean
-
-Clean --> Chunk
-Chunk --> Gemini
-
-Gemini --> Summary
-Gemini --> Notes
-Gemini --> Quiz
-Gemini --> Map
-
-Summary --> DB
-Notes --> DB
-Quiz --> DB
-Map --> DB
-```
-
----
-
-## Project Folder Structure
+This allows the model to correctly understand cyclical relationships such as:
 
 ```text
-├── .env                          # Local configuration and secret keys
-├── .env.example                  # Template listing required environment variables
-├── Dockerfile                    # Multi-stage production container build for the Next.js app
-├── docker-compose.yml            # Services orchestration (Next.js, FastAPI, PostgreSQL)
-├── package.json                  # Next.js configurations, tasks, and NPM dependencies
-├── tsconfig.json                 # TypeScript compiler configuration
-├── next.config.js                # Next.js configuration containing Webpack modifications
-├── prisma/
-│   ├── migrations/               # Database SQL schema updates history
-│   └── schema.prisma             # PostgreSQL schema models (User, Document, Summary, Note, Quiz, etc.)
-├── server/                       # FastAPI microservice for raw document extraction & OCR
-│   ├── main.py                   # FastAPI service endpoints (PyMuPDF, pdfplumber, pytesseract)
-│   ├── requirements.txt          # Python packages (fastapi, PyMuPDF, pdfplumber, pytesseract, uvicorn)
-│   └── Dockerfile                # Docker build configuration for Python service
-├── public/                       # Static public assets served directly
-├── src/                          # Next.js application source root
-│   ├── app/                      # Next.js 16 app Router folder
-│   │   ├── (dashboard)/          # Grouped authenticated views
-│   │   │   ├── analytics/        # Cognitive telemetry and study statistics page
-│   │   │   ├── dashboard/        # Main hub showing upload areas and recently studied material
-│   │   │   ├── documents/        # Detailed document review, editing, and reprocessing layout
-│   │   │   ├── quiz-lab/         # Interactive testing studio for active recall quizing
-│   │   │   ├── smart-notes/      # Dynamic concept cards, definition indexes, and revision sheets
-│   │   │   ├── summaries/        # Detailed executive briefs, methodologies, and findings view
-│   │   │   └── settings/         # Custom app settings (accent colors, light/dark mode, notifications)
-│   │   ├── api/                  # Backend REST API routes
-│   │   │   ├── auth/             # Session, signup, password-reset, and email verification endpoints
-│   │   │   ├── upload/           # Core ingestion endpoint streaming real-time pipeline status via SSE
-│   │   │   ├── chat/             # Context-aware chat endpoint using uploaded PDFs as dynamic grounding
-│   │   │   └── [notes/quizzes...] # CRUD API endpoints for notes, quizzes, and telemetry
-│   │   ├── auth/                 # Frontend signin, register, and reset screens
-│   │   ├── layout.tsx            # Global application root layout
-│   │   └── providers.tsx         # NextAuth SessionProvider wrappers
-│   ├── components/               # Custom modular visual elements
-│   │   ├── Assistant/            # Floating interactive AI orb supporting drag/drop and chat
-│   │   ├── Background/           # Immersive canvas-drawn neural connection background
-│   │   ├── Layout/               # Page wrapper layouts
-│   │   ├── Navigation/           # Glassmorphic QuantumDock and TopNavbar command bars
-│   │   └── Workspace/            # Ingestion drop-zones and progress loading indicators
-│   ├── lib/                      # Common library logic
-│   │   ├── ai-engine.ts          # AI manager. Directs Gemini Flash API or coordinates local NLP fallbacks
-│   │   ├── db.ts                 # Prisma Client initializer
-│   │   ├── auth.ts               # NextAuth setup supporting credentials and OAuth callbacks
-│   │   ├── csrf.ts               # Timing-safe CSRF validation wrapper
-│   │   ├── rate-limit.ts         # Sliding-window rate limiter utilizing in-memory Maps
-│   │   └── knowledge-map-generator.ts # D3 node positioning generator for knowledge visualization
-│   └── index.css                 # Custom font injections and layout utility wrappers (neural-glass)
+23:00 → 00:00
+```
+
+which standard numerical encoding cannot represent effectively.
+
+---
+
+### Geospatial Feature Engineering
+
+Hierarchical location information was extracted through geohash decomposition.
+
+```text
+geohash
+├── gh3
+└── gh4
+```
+
+These engineered features help capture:
+
+- Regional traffic patterns
+- Spatial clustering effects
+- Location-specific demand trends
+
+---
+
+## Feature Engineering
+
+The final feature set consists of multiple feature groups.
+
+### Temporal Features
+
+- hour
+- minute
+- hour_sin
+- hour_cos
+- time_period
+
+### Spatial Features
+
+- geohash
+- gh3
+- gh4
+
+### Infrastructure Features
+
+- RoadType
+- NumberofLanes
+- LargeVehicles
+- Landmarks
+
+### Environmental Features
+
+- Temperature
+- Weather
+
+### Interaction Features
+
+- veh_lanes
+- road_lanes
+- land_veh
+- weather_temp
+
+---
+
+## Model Selection
+
+Several machine learning algorithms were considered:
+
+- Linear Regression
+- Random Forest Regressor
+- XGBoost
+- LightGBM
+- CatBoost
+
+CatBoost was selected due to:
+
+- Native categorical feature handling
+- Strong performance on tabular datasets
+- Reduced preprocessing requirements
+- Excellent handling of high-cardinality features
+- Robust generalization capabilities
+
+---
+
+## Model Configuration
+
+```text
+Algorithm: CatBoostRegressor
+
+Iterations: 1500
+Learning Rate: 0.07
+Depth: 8
+L2 Regularization: 5
+Subsample: 0.8
+Early Stopping Rounds: 80
+Loss Function: RMSE
+Random State: 42
 ```
 
 ---
 
-## Database Schema Overview
+## Validation Strategy
 
-The database models are designed to store hierarchical learning states linked to an authenticated user:
+To ensure robust model evaluation, K-Fold Cross Validation was employed.
 
-| Model | Primary Fields | Relations / Purpose |
-| :--- | :--- | :--- |
-| **User** | `id`, `name`, `email`, `hashedPassword`, `image`, `authProvider` | Central account profile. Links user data. |
-| **Account** | `id`, `userId`, `type`, `provider`, `providerAccountId`, `refresh_token` | Links third-party login providers (e.g. Google OAuth). |
-| **Session** | `id`, `sessionToken`, `userId`, `expires` | Handles user authentication sessions. |
-| **Document** | `id`, `userId`, `title`, `fileUrl`, `fileData`, `processingStatus` | Uploaded PDFs (raw binary fileData stored for standalone reprocessing). |
-| **Extraction**| `id`, `documentId`, `text` | Cleaned full text extracted from the document. |
-| **Summary** | `id`, `documentId`, `executiveBrief`, `concepts`, `formulas`, `techStack`| Comprehensive AI-generated analysis of the document. |
-| **Quiz** | `id`, `summaryId`, `questions` (JSON), `difficulty`, `score` | Active recall assessment cards linked to a summary. |
-| **Note** | `id`, `userId`, `summaryId`, `title`, `content`, `type`, `pinned` | Concept, definition, or revision notes. |
-| **KnowledgeMap**| `id`, `userId`, `topic`, `category`, `points`, `connections`, `x`, `y`| Nodes in the 2D coordinate network. |
-| **Analytics** | `id`, `userId`, `studyMinutes`, `cognitiveScore`, `quizzesTaken`, `date`| Focus telemetry metrics over time. |
-| **UserPreferences**| `id`, `userId`, `intensity`, `adaptive`, `dark`, `accentColor` | Configures client-side dashboard styling. |
-| **LearningSession**| `id`, `userId`, `title`, `type`, `duration`, `score` | Historical log tracking study activities. |
+### Configuration
 
----
-
-## API Endpoints Table
-
-All API endpoints are protected using NextAuth session checks. Mutating endpoints validate CSRF tokens.
-
-### Authentication & Profile
-| Method | Endpoint | Description | Request/Response Payload |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/api/auth/signup` | Registers a new credentials user. | `{ email, password, name }` → `{ success: true }` |
-| `POST` | `/api/auth/forgot-password`| Sends a password reset token via email. | `{ email }` → `{ success: true }` |
-| `POST` | `/api/auth/reset-password` | Resets user password using reset token. | `{ token, password }` → `{ success: true }` |
-| `GET` | `/api/profile` | Fetches active user profile metrics. | Returns User data, sessions, preferences. |
-| `PATCH`| `/api/profile` | Updates profile name or image URL. | `{ name, image }` → Updated user object. |
-| `DELETE`| `/api/profile` | Deletes user account and cascade-deletes data. | Returns status check confirmation. |
-| `GET` | `/api/profile/export` | Generates a JSON download of all user data. | Returns User, Documents, Notes, Quizzes. |
-
-### Document Ingestion & Chat
-| Method | Endpoint | Description | Request/Response Payload |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/api/upload` | Core upload pipeline streaming status via SSE. | `multipart/form-data` with `file: PDF` → Streams SSE. |
-| `GET` | `/api/uploads/[filename]`| Serves raw document file for user rendering. | Returns PDF file bytes. |
-| `GET` | `/api/documents` | Lists all documents belonging to user. | Returns Document array with status flags. |
-| `DELETE`| `/api/documents` | Deletes specified document. | Query: `?id=uuid` → `{ success: true }` |
-| `GET` | `/api/documents/[id]`| Fetches a specific document, summary, and quiz. | Returns document with relational models. |
-| `POST` | `/api/documents/[id]`| Triggers manual reprocessing of parsed text. | Reprocesses extraction through the AI Engine. |
-| `PATCH`| `/api/documents/[id]`| Updates document metadata (e.g. title). | `{ title }` → Updated Document object. |
-| `POST` | `/api/chat` | Context-aware chat using PDF contents as grounding. | `{ message, history }` → `{ reply: string }` |
-
-### Learning Objects (Notes, Quizzes, Maps)
-| Method | Endpoint | Description | Request/Response Payload |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/api/notes` | Lists smart study notes. Filterable by type/doc.| Query: `?documentId=uuid` → Note array. |
-| `POST` | `/api/notes` | Manually creates a new study note. | `{ title, content, type, summaryId }` → Note object.|
-| `PUT` | `/api/notes` | Updates note content, title, or pins it. | `{ id, title, content, pinned }` → Note object. |
-| `DELETE`| `/api/notes` | Deletes specified note. | Query: `?id=uuid` → `{ success: true }` |
-| `GET` | `/api/summaries` | Lists summaries. | Returns Summary array. |
-| `GET` | `/api/quizzes` | Lists quizzes. | Returns Quiz array. |
-| `POST` | `/api/quizzes` | Submits score from completed quiz. | `{ id, score }` → Updated Quiz object. |
-| `GET` | `/api/knowledge-map`| Fetches knowledge map coordinates for rendering. | Returns array of map nodes with connections. |
-| `GET` | `/api/analytics` | Fetches focus telemetry and diagnostics. | Returns metrics, activityData, mastery, diagnosis. |
-| `GET` | `/api/preferences` | Fetches user settings (accent colors, dark mode).| Returns UserPreferences object. |
-| `PUT` | `/api/preferences` | Updates user settings. | `{ dark, accentColor, intensity, adaptive }` |
-| `GET` | `/api/search` | Search index across summaries, notes, and docs. | Query: `?q=searchterm` → `{ results: [] }` |
-| `GET` | `/api/csrf` | Fetches fresh CSRF token. | Returns `{ csrfToken }` |
-| `GET` | `/api/health` | Next.js API router health check. | `{ status: "ok" }` |
-
----
-
-## Security Features
-
-1. **CSRF Protection**: All state-modifying requests (`POST`, `PUT`, `PATCH`, `DELETE`) are wrapped in custom middleware that validates timing-safe CSRF tokens generated via cryptographic hashes.
-2. **Sliding Window Rate Limiting**: In-memory rate limits restrict excessive requests on sensitive endpoints:
-   - File uploads: `10 requests per minute` per IP address.
-   - Interactive AI chat: `30 requests per minute` per IP address.
-3. **Strict Input Sanitization**: Chat messages, note inputs, and profile edits are sanitized using Zod schemas and regex scripts to prevent cross-site scripting (XSS) and code injections.
-4. **Credential Hashing**: User passwords are encrypted with `bcryptjs` before insertion into Neon DB.
-5. **Secure Middleware Guards**: Dynamic route groups (like the `(dashboard)`) and API endpoints require active session checks via custom authentication validators, returning 401/403 responses immediately upon token expiration.
-
----
-
-## Performance Considerations
-
-- **Dynamic Component Loading**: Heavy interface elements (like `NeuralBackground` canvas particle physics, the circular `QuantumDock`, and the floating `FloatingAIAssistant`) are imported dynamically with SSR disabled to optimize initial load times.
-- **Standalone Build Optimization**: Build script compiles Next.js into a standalone runner bundle (`.next/standalone`), reducing docker image sizes and minimizing dependency overhead.
-- **Incremental Data Streaming**: File upload pipelines utilize Server-Sent Events (SSE) to report progress to clients incrementally, avoiding network timeouts during deep AI processing.
-- **Database Selection Constraints**: Database queries restrict returned payloads using Prisma's `select` and `take` operators, preventing memory spikes when retrieving summaries and notes.
-
----
-
-## Installation & Setup
-
-Ensure you have **Node.js 20+**, **Python 3.10+**, and **Docker** installed.
-
-### 1. Repository Setup & Dependencies
-```bash
-# Clone the repository
-git clone https://github.com/asc006-git/NeuroLearn.git
-cd NeuroLearn-AI
-
-# Install Next.js dependencies
-npm install
-
-# Install FastAPI dependencies
-cd server
-pip install -r requirements.txt
-cd ..
+```text
+Number of Folds: 3
+Shuffle: True
+Random State: 42
 ```
 
-### 2. Database Migration
-Make sure your PostgreSQL database is running, copy the environment template, and run migrations:
-```bash
-# Copy env variables template
-cp .env.example 
+Each fold produced an independent model and validation score.
 
-# Configure your database connection in .env (DATABASE_URL)
-# Run Prisma schema migration
-npx prisma db push
-npx prisma generate
-```
-
-### 3. Running Locally
-Run the servers separately or coordinate them via Docker Compose:
-
-#### Local Development Run:
-```bash
-# Terminal 1: Run Next.js
-npm run dev
-
-# Terminal 2: Run Python FastAPI
-cd server
-python main.py
-```
-
-#### Run with Docker Compose:
-```bash
-# Build and run containers
-docker-compose up --build
-```
-The application will launch on `http://localhost:3000`, database on port `5432`, and FastAPI backend on `http://localhost:8000`.
+Final test predictions were generated using ensemble averaging across all fold models.
 
 ---
 
-## Environment Configuration Matrix
+## Results
 
-The application reads configurations from `.env` in the root:
+### Cross Validation Performance
 
-| Environment Variable | Description | Default Value / Example |
-| :--- | :--- | :--- |
-| `DATABASE_URL` | PostgreSQL DB URL connection string | `postgresql://neurolearn:password@postgres:5432/neurolearn` |
-| `NEXTAUTH_URL` | Application root URL for NextAuth session callbacks | `http://localhost:3000` |
-| `NEXTAUTH_SECRET` | 32-character key for encrypting JWT tokens | `openssl rand -base64 64` |
-| `GOOGLE_CLIENT_ID` | Client identifier for Google OAuth login | `google-oauth-client-id` |
-| `GOOGLE_CLIENT_SECRET`| Client secret for Google OAuth authentication | `google-oauth-client-secret` |
-| `GOOGLE_API_KEY` | Google Gemini API Studio key (Fast Flash calls) | `AIzaSy...` |
-| `NEXT_PUBLIC_AI_SERVICE_URL`| Browser endpoint redirecting to FastAPI | `http://127.0.0.1:8000` |
-| `FASTAPI_URL` | Server-to-server endpoint for Next.js to FastAPI | `http://127.0.0.1:8000` |
+| Fold | R² Score |
+|--------|----------|
+| Fold 1 | 0.9409 |
+| Fold 2 | 0.9387 |
+| Fold 3 | 0.9389 |
 
----
+### Overall Performance
 
-## License & Attribution
+```text
+Mean R² Score : 0.9395
+Standard Deviation : 0.0010
+```
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+The low standard deviation indicates strong model consistency and stable generalization performance.
 
 ---
 
-<p align="center">
-  Built and maintained by <strong>Adhyatma Singh Chauhan</strong>
-</p>
+## Feature Importance Analysis
+
+Top features identified by CatBoost:
+
+| Rank | Feature |
+|--------|---------|
+| 1 | RoadType |
+| 2 | geohash |
+| 3 | gh4 |
+| 4 | NumberofLanes |
+| 5 | road_lanes |
+| 6 | time_period |
+| 7 | veh_lanes |
+| 8 | RoadType_enc |
+| 9 | hour_sin |
+| 10 | hour_cos |
+
+These findings indicate that spatial information and road infrastructure characteristics play a dominant role in traffic demand prediction.
+
+---
+
+## Project Structure
+
+```text
+traffic-demand-prediction/
+│
+├── dataset/
+│   ├── train.csv
+│   ├── test.csv
+│   └── sample_submission.csv
+│
+├── eda.py
+├── train.py
+├── full_pipeline.py
+├── submission.csv
+├── README.md
+├── requirements.txt
+│
+├── catboost_info/
+│   ├── learn_error.tsv
+│   ├── test_error.tsv
+│   ├── time_left.tsv
+│   └── catboost_training.json
+│
+└── outputs/
+```
+
+---
+
+## Future Enhancements
+
+Potential future improvements include:
+
+- Hyperparameter optimization using Optuna
+- LightGBM and XGBoost ensemble models
+- Stacked generalization frameworks
+- Advanced geohash target encoding
+- Temporal sequence modeling
+- Bayesian optimization
+- Automated feature selection
+- Spatial clustering techniques
+- Real-time deployment through REST APIs
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- CatBoost
+- Git
+- GitHub
+
+---
+
+## Author
+
+**Adhyatma**
+
+Machine Learning | Data Science | Software Development
+
+This project demonstrates the application of feature engineering, geospatial analytics, and gradient boosting techniques for large-scale traffic demand forecasting and predictive modeling.
