@@ -1,196 +1,173 @@
-<svg width="1800" height="600" viewBox="0 0 1800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1280" height="320" viewBox="0 0 1280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- 
-    BANNER: Adhyatma Singh Chauhan - Futuristic AI OS
-    STYLE: Premium Cyberpunk / HUD / Glassmorphism
-    TECH: Pure SVG + SMIL (No JS/Raster)
+    HANDCRAFTED SVG RE README HERO 
+    Theme: Space Explorer / Engineering OS
+    Colors: #D946EF (Magenta), #38BDF8 (Blue), #22D3EE (Cyan)
   -->
+  
   <defs>
+    <!-- Fonts -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;family=Fira+Code:wght@500&amp;display=swap');
+      .name-text { font-family: 'Inter', sans-serif; font-weight: 800; }
+      .mono-text { font-family: 'Fira Code', monospace; font-weight: 500; letter-spacing: 2px; }
       
-      .text-main { font-family: 'Inter', sans-serif; font-weight: 800; }
-      .text-tagline { font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.2em; }
-      .text-mono { font-family: 'Fira Code', monospace; }
+      @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+      @keyframes shimmer { 0% { stop-opacity: 0.2; } 50% { stop-opacity: 0.6; } 100% { stop-opacity: 0.2; } }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       
-      @keyframes pulse-opacity { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-      .pulse { animation: pulse-opacity 3s ease-in-out infinite; }
-      
-      .glass { backdrop-filter: blur(10px); }
+      .star { animation: twinkle 3s infinite ease-in-out; }
+      .floating { animation: float 4s infinite ease-in-out; }
+      .cursor { animation: blink 0.8s infinite; }
     </style>
 
-    <!-- Glowing Bloom Filter -->
-    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
+    <!-- Gradients -->
+    <linearGradient id="bg_grad" x1="0" y1="0" x2="1280" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#050510"/>
+      <stop offset="0.5" stop-color="#09061F"/>
+      <stop offset="1" stop-color="#120B32"/>
+    </linearGradient>
 
-    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <radialGradient id="nebula_purple" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 160) rotate(45) scale(400)">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="name_grad" x1="400" y1="0" x2="880" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D946EF"/>
+      <stop offset="0.5" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- Glow Effects -->
+    <filter id="neon_glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Glassmorphism Shaders -->
-    <linearGradient id="glass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02" />
-    </linearGradient>
-
-    <!-- Background Gradients -->
-    <radialGradient id="bg-spotlight" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1A0B35" />
-      <stop offset="100%" stop-color="#050505" />
-    </radialGradient>
-
-    <linearGradient id="purple-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8B5CF6" />
-      <stop offset="100%" stop-color="#00F5FF" />
-    </linearGradient>
-
-    <!-- Tech Circuitry Pattern -->
-    <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-      <path d="M0 50 H30 L40 40 H60 L70 50 H100" stroke="#7C3AED" stroke-width="0.5" opacity="0.15" fill="none" />
-      <circle cx="40" cy="40" r="1" fill="#A855F7" opacity="0.3" />
-    </pattern>
+    <!-- Typing Mask -->
+    <mask id="typing_mask">
+      <rect x="0" y="0" width="0" height="320" fill="white">
+        <animate attributeName="width" from="0" to="1280" dur="2.5s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      </rect>
+    </mask>
   </defs>
 
   <!-- BACKGROUND ARCHITECTURE -->
-  <rect width="1800" height="600" fill="#050505" />
-  <rect width="1800" height="600" fill="url(#bg-spotlight)" opacity="0.8" />
-  <rect width="1800" height="600" fill="url(#circuit-pattern)" />
+  <rect width="1280" height="320" fill="url(#bg_grad)"/>
+  <rect width="1280" height="320" fill="url(#nebula_purple)"/>
   
-  <!-- Animated Binary Rain (Subtle) -->
-  <g fill="#A855F7" font-family="monospace" font-size="10" opacity="0.12">
-    <text x="100" y="0">1011010010<animate attributeName="y" from="-50" to="650" dur="15s" repeatCount="indefinite" /></text>
-    <text x="1600" y="0">0xAF 0x32 0xEE<animate attributeName="y" from="-50" to="650" dur="12s" repeatCount="indefinite" /></text>
-    <text x="400" y="0">010010110<animate attributeName="y" from="-50" to="650" dur="18s" repeatCount="indefinite" /></text>
-  </g>
-
-  <!-- Scanlines -->
-  <rect width="1800" height="1" fill="#FFFFFF" opacity="0.03">
-    <animate attributeName="y" from="0" to="600" dur="8s" repeatCount="indefinite" />
-  </rect>
-
-  <!-- LEFT: HOODED OPERATOR HOLOGRAPHIC SILHOUETTE -->
-  <g transform="translate(100, 100)">
-    <!-- Aura Rings -->
-    <circle cx="150" cy="200" r="180" stroke="#8B5CF6" stroke-width="0.5" opacity="0.2" stroke-dasharray="10 20">
-      <animateTransform attributeName="transform" type="rotate" from="0 150 200" to="360 150 200" dur="40s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- Vector Hoodie Operator -->
-    <g filter="url(#neon-glow)">
-      <!-- Body & Hood -->
-      <path d="M150 80 Q210 80 230 150 L250 350 L50 350 L70 150 Q90 80 150 80Z" fill="none" stroke="#A855F7" stroke-width="2">
-        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="5s" repeatCount="indefinite" />
-      </path>
-      <!-- Face Silhouette -->
-      <path d="M120 160 Q150 140 180 160 Q190 220 150 250 Q110 220 120 160Z" fill="none" stroke="#00F5FF" stroke-width="1.5" opacity="0.6" />
-      <!-- Code Brackets -->
-      <text x="70" y="150" fill="#00F5FF" font-family="monospace" font-size="24" class="pulse">&lt;</text>
-      <text x="210" y="150" fill="#00F5FF" font-family="monospace" font-size="24" class="pulse">/&gt;</text>
-    </g>
-    
-    <!-- Floating Data Nodes -->
-    <line x1="250" y1="200" x2="320" y2="150" stroke="#8B5CF6" stroke-width="1" opacity="0.3" />
-    <circle cx="320" cy="150" r="3" fill="#00F5FF" filter="url(#soft-glow)" />
-  </g>
-
-  <!-- CENTER: IDENTITY & BRANDING -->
-  <g transform="translate(900, 240)" text-anchor="middle">
-    <!-- Glassmorphism Backpanel -->
-    <rect x="-450" y="-80" width="900" height="260" rx="20" fill="url(#glass-grad)" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1" class="glass" />
-    
-    <!-- Name with Neon Glow -->
-    <text y="0" class="text-main" font-size="72" fill="#FFFFFF" filter="url(#neon-glow)">
-      ADHYATMA SINGH CHAUHAN
-    </text>
-    
-    <!-- Sequential Tagline -->
-    <text y="50" class="text-tagline" font-size="16" fill="#A855F7">
-      SOFTWARE ENGINEER • AI DEVELOPER • PROBLEM SOLVER
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" />
-    </text>
-
-    <!-- ANIMATED TERMINAL -->
-    <g transform="translate(-350, 90)">
-      <rect width="700" height="100" rx="10" fill="#0A0A0A" stroke="#333" stroke-width="1" />
-      <!-- Window Controls -->
-      <circle cx="20" cy="15" r="4" fill="#FF5F56" />
-      <circle cx="35" cy="15" r="4" fill="#FFBD2E" />
-      <circle cx="50" cy="15" r="4" fill="#27C93F" />
-      
-      <g transform="translate(20, 50)" class="text-mono" font-size="14">
-        <!-- Sequential Commands -->
-        <text fill="#00F5FF" opacity="0">
-          &gt; git commit -m "initial: neural_engine_v4"
-          <animate attributeName="opacity" values="0;1;1;0" dur="10s" begin="0s" repeatCount="indefinite" />
-        </text>
-        <text fill="#CAFF3C" opacity="0">
-          &gt; python3 train_model.py --precision=high
-          <animate attributeName="opacity" values="0;1;1;0" dur="10s" begin="2.5s" repeatCount="indefinite" />
-        </text>
-        <text fill="#A855F7" opacity="0">
-          &gt; docker compose up -d --build production
-          <animate attributeName="opacity" values="0;1;1;0" dur="10s" begin="5s" repeatCount="indefinite" />
-        </text>
-        <text fill="#FFFFFF" opacity="0">
-          &gt; System Status: [OPERATIONAL] _
-          <animate attributeName="opacity" values="0;1;1;0" dur="10s" begin="7.5s" repeatCount="indefinite" />
-        </text>
-      </g>
-    </g>
-  </g>
-
-  <!-- RIGHT: SYSTEM HUD & AI CORE -->
-  <g transform="translate(1500, 300)">
-    <!-- Rotating Circular HUD -->
-    <circle r="120" fill="none" stroke="#8B5CF6" stroke-width="1" stroke-dasharray="10 15" opacity="0.3">
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite" />
-    </circle>
-    <circle r="100" fill="none" stroke="#00F5FF" stroke-width="3" stroke-dasharray="60 140" opacity="0.6">
-      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite" />
-    </circle>
-    
-    <!-- AI Brain Wireframe Node -->
-    <path d="M-30 -10 Q0 -50 30 -10 Q50 20 0 60 Q-50 20 -30 -10 Z" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.4">
-      <animate attributeName="stroke-width" values="1;2;1" dur="2s" repeatCount="indefinite" />
-    </path>
-    
-    <!-- Digital Counters -->
-    <text x="0" y="5" text-anchor="middle" fill="#00F5FF" class="text-mono" font-size="12">
-      SYNCING...
-      <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite" />
-    </text>
-  </g>
-
-  <!-- GLOBAL DECORATIONS: FLOATING ICONS (Minimalist Neon) -->
-  <g font-family="Inter" font-size="10" font-weight="bold" fill="white" opacity="0.4">
-    <text x="1400" y="100">AI / ML</text>
-    <text x="1450" y="450">K8S</text>
-    <text x="300" y="500">DOCKER</text>
-    <text x="400" y="80">REACT</text>
-    <circle cx="1400" cy="95" r="2" fill="#00F5FF" />
-  </g>
-
-  <!-- NEON BORDER / HUD FRAME -->
-  <g stroke="url(#purple-cyan)" stroke-width="2" fill="none">
-    <!-- Top-Left L-Shape -->
-    <path d="M30 100 V30 H100" />
-    <!-- Bottom-Right L-Shape -->
-    <path d="M1700 570 H1770 V500" />
-    
-    <!-- Energy Pulse following border -->
-    <circle r="3" fill="#FFFFFF">
-      <animateMotion path="M30 30 H1770 V570 H30 Z" dur="15s" repeatCount="indefinite" />
-    </circle>
+  <!-- STARS & TWINKLE -->
+  <g class="star">
+    <circle cx="150" cy="50" r="1" fill="white" opacity="0.6"/>
+    <circle cx="450" cy="280" r="1.2" fill="white" opacity="0.8"/>
+    <circle cx="900" cy="40" r="0.8" fill="white" opacity="0.4"/>
+    <circle cx="1100" cy="250" r="1" fill="#38BDF8" opacity="0.6"/>
+    <circle cx="200" cy="200" r="0.5" fill="white" opacity="0.3"/>
   </g>
   
-  <!-- Subtle Reflections / Electric Arcs -->
-  <path d="M0 300 Q450 280 900 300 T1800 300" stroke="#8B5CF6" stroke-width="0.5" opacity="0.1">
-    <animate attributeName="d" values="M0 300 Q450 280 900 300 T1800 300; M0 300 Q450 320 900 300 T1800 300; M0 300 Q450 280 900 300 T1800 300" dur="10s" repeatCount="indefinite" />
+  <!-- SHOOTING STAR -->
+  <path d="M-50 50 L50 20" stroke="url(#name_grad)" stroke-width="1" opacity="0">
+    <animate attributeName="d" from="M100 -50 L50 0" to="M1300 250 L1250 300" dur="6s" repeatCount="indefinite" begin="2s"/>
+    <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite" begin="2s"/>
   </path>
 
+  <!-- HUD BORDER DECORATIONS -->
+  <g stroke="#38BDF8" stroke-width="1" opacity="0.4" filter="url(#neon_glow)">
+    <!-- Top-Left Bracket -->
+    <path d="M20 60 V20 H60 L70 30"/>
+    <!-- Bottom-Right Bracket -->
+    <path d="M1260 260 V300 H1220 L1210 290"/>
+    <!-- Telemetry Lines -->
+    <line x1="600" y1="15" x2="680" y2="15" stroke-dasharray="2 4"/>
+    <text x="615" y="10" font-family="monospace" font-size="6" fill="#38BDF8" opacity="0.8">COORD: 42.0.1 // SCALE: AUTO</text>
+  </g>
+
+  <!-- LEFT: ASTRONAUT ON MOON -->
+  <g transform="translate(80, 140)">
+    <!-- Moon Surface -->
+    <path d="M-100 120 Q120 50 340 120" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+    <circle cx="150" cy="110" r="15" fill="#1E293B" opacity="0.5"/>
+    <circle cx="280" cy="95" r="8" fill="#1E293B" opacity="0.3"/>
+    
+    <!-- Astronaut Stylized -->
+    <g class="floating">
+      <!-- Body -->
+      <rect x="110" y="45" width="40" height="50" rx="10" fill="#F8FAFC" />
+      <rect x="115" y="55" width="30" height="20" rx="5" fill="#0F172A"/> <!-- Visor -->
+      <rect x="118" y="58" width="24" height="14" rx="3" fill="url(#name_grad)" opacity="0.8"/> <!-- Visor Glow -->
+      <!-- Laptop -->
+      <path d="M150 85 L185 85 L195 65 L160 65 Z" fill="#334155"/>
+      <rect x="162" y="68" width="28" height="15" fill="#38BDF8" opacity="0.4">
+        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Tiny Planet -->
+    <circle cx="50" cy="20" r="12" fill="#1E1B4B" stroke="#D946EF" stroke-width="0.5" class="floating"/>
+    <ellipse cx="50" cy="20" rx="20" ry="4" stroke="#D946EF" stroke-width="0.5" fill="none" opacity="0.4" transform="rotate(-15 50 20)"/>
+  </g>
+
+  <!-- CENTER: IDENTITY -->
+  <g transform="translate(640, 160)" text-anchor="middle">
+    <!-- Masked Typing Text -->
+    <g mask="url(#typing_mask)">
+      <text y="0" class="name-text" font-size="52" fill="url(#name_grad)" filter="url(#neon_glow)">ADHYATMA SINGH CHAUHAN</text>
+    </g>
+    
+    <!-- Blinking Cursor -->
+    <rect width="4" height="40" fill="#22D3EE" class="cursor" y="-35">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 450,0" dur="2.5s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+
+    <!-- Tagline -->
+    <g opacity="0">
+      <text y="45" class="mono-text" font-size="14">
+        <tspan fill="#D946EF">BUILDING TODAY</tspan>
+        <tspan fill="#38BDF8"> • </tspan>
+        <tspan fill="#38BDF8">SOLVING TOMORROW</tspan>
+        <tspan fill="#22D3EE"> • </tspan>
+        <tspan fill="#22D3EE">IMPACTING FOREVER</tspan>
+      </text>
+      <animate attributeName="opacity" from="0" to="1" dur="1s" begin="3s" fill="freeze"/>
+      <animate attributeName="transform" type="translate" from="0,20" to="0,0" dur="1s" begin="3s" fill="freeze"/>
+    </g>
+  </g>
+
+  <!-- RIGHT: MAGNIFICENT RINGED PLANET -->
+  <g transform="translate(1080, 160)">
+    <!-- Halo -->
+    <circle r="75" fill="#38BDF8" opacity="0.05" filter="url(#neon_glow)">
+      <animate attributeName="r" values="75;80;75" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Planet Body -->
+    <circle r="60" fill="#0F172A"/>
+    <circle r="60" fill="url(#bg_grad)" opacity="0.8"/>
+    <path d="M-60 0 A60 60 0 0 1 60 0" fill="#7C3AED" opacity="0.1">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Orbital Rings -->
+    <g transform="rotate(-25)">
+      <!-- Back Rings -->
+      <ellipse cx="0" cy="0" rx="130" ry="25" stroke="#7C3AED" stroke-width="2" fill="none" opacity="0.3" stroke-dasharray="100 50"/>
+      <!-- Front Rings -->
+      <ellipse cx="0" cy="0" rx="110" ry="20" stroke="#38BDF8" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <ellipse cx="0" cy="0" rx="90" ry="15" stroke="#22D3EE" stroke-width="1" fill="none" opacity="0.4"/>
+      
+      <animateTransform attributeName="transform" type="scale" values="1;1.02;1" dur="4s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+
+  <!-- FINISHING TECH DETAILS -->
+  <g font-family="monospace" font-size="7" fill="#38BDF8" opacity="0.2">
+    <text x="1180" y="305">0x74 0x65 0x63 0x68</text>
+    <path d="M1170 300 H1260" stroke="#38BDF8" stroke-width="0.5"/>
+    <text x="30" y="305">STABLE_CONNECTION // 99.9%</text>
+  </g>
 </svg>
