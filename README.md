@@ -16,55 +16,22 @@
 
 ---
 
-<table>
-<tr>
+<h2>About Me</h2>
 
-<td width="55%" valign="top">
-
-## 👨‍💻 About Me
-
-* 🤖 Building **AI-powered software** that solves real-world security challenges.
-* 🛡️ Passionate about **Backend Engineering, Intelligent Systems, and Machine Learning**.
-* 🚀 Open Source contributor who enjoys transforming ideas into production-ready products.
-* 💡 Constantly exploring scalable architectures, cleaner code, and modern engineering practices.
-
-<br>
-
-### 📌 Current Focus
-
-```text
-✓ AI Security Systems
-
-✓ Backend Development
-
-✓ Open Source Contributions
-
-✓ Full Stack AI Products
-```
+<ul>
+<li>Building AI-powered software that solves real-world security challenges.</li>
+<li>Passionate about Intelligent Systems, Backend Engineering, and Machine Learning.</li>
+<li>Open Source contributor who enjoys transforming ideas into production-ready products.</li>
+<li>Always exploring better architectures, cleaner code, and scalable solutions.</li>
+</ul>
 
 </td>
 
-<td width="45%" align="center">
+<td width="42%" align="right">
 
-```java
-public class Adhyatma {
-
-    public static void main(String[] args) {
-
-        while (learning()) {
-
-            build();
-
-            improve();
-
-            contribute();
-
-        }
-
-    }
-
-}
-```
+<img src="dev-workspace.svg"
+     width="360"
+     style="transform: rotate(-6deg);" />
 
 </td>
 
