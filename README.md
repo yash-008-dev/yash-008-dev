@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=asc006-git&theme=matrix" />
+  <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/username=asc006-git&theme=matrix" />
   <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=asc006-git&theme=matrix" />
   <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=asc006-git&theme=matrix" />
   <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=asc006-git&theme=matrix"/>
