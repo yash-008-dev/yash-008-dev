@@ -29,7 +29,7 @@
 
 <td width="42%" align="right">
 
-<img src="dev-workspace.svg"
+<img src="./assets/dev-workspace.svg"
      width="360"
      style="transform: rotate(-6deg);" />
 
