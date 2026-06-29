@@ -78,28 +78,32 @@
 ---
 
 <p align="center">
-  <!-- Use the image with the corresponding HTML map -->
-  <img src="./assets/connect.svg" usemap="#connect-map" width="850" height="150" alt="Let's Connect" style="max-width: 100%; height: auto;"/>
+  <img src="./assets/connect.svg" width="100%" alt="Let's Connect"/>
 </p>
 
-<!-- Define the clickable areas matching your SVG button locations -->
-<map name="connect-map">
-  <!-- LinkedIn (x1=28, y1=58 to x2=150, y2=100) -->
-  <area shape="rect" coords="28,58,150,100" alt="LinkedIn" href="https://www.linkedin.com/in/adhyatma006" target="_blank">
-  
-  <!-- GitHub (x1=163, y1=58 to x2=285, y2=100) -->
-  <area shape="rect" coords="163,58,285,100" alt="GitHub" href="https://github.com/asc006-git" target="_blank">
-  
-  <!-- LeetCode (x1=298, y1=58 to x2=420, y2=100) -->
-  <area shape="rect" coords="298,58,420,100" alt="LeetCode" href="https://leetcode.com/u/asc_006/" target="_blank">
-  
-  <!-- Codeforces (x1=433, y1=58 to x2=555, y2=100) -->
-  <area shape="rect" coords="433,58,555,100" alt="Codeforces" href="https://codeforces.com/profile/Adhyatma_27" target="_blank">
-  
-  <!-- Email (x1=568, y1=58 to x2=690, y2=100) -->
-  <area shape="rect" coords="568,58,690,100" alt="Email" href="mailto:adhyatma006@gmail.com">
-</map>
+<p align="center">
+  <a href="https://www.linkedin.com/in/adhyatma006" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A1510?style=for-the-badge&logo=linkedin&logoColor=00FF88&labelColor=040506" alt="LinkedIn"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/asc006-git" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-0A1510?style=for-the-badge&logo=github&logoColor=00FF88&labelColor=040506" alt="GitHub"/>
+  </a>
+  &nbsp;
+  <a href="https://leetcode.com/u/asc_006/" target="_blank">
+    <img src="https://img.shields.io/badge/LeetCode-0A1510?style=for-the-badge&logo=leetcode&logoColor=00FF88&labelColor=040506" alt="LeetCode"/>
+  </a>
+  &nbsp;
+  <a href="https://codeforces.com/profile/Adhyatma_27" target="_blank">
+    <img src="https://img.shields.io/badge/Codeforces-0A1510?style=for-the-badge&logo=codeforces&logoColor=00FF88&labelColor=040506" alt="Codeforces"/>
+  </a>
+  &nbsp;
+  <a href="mailto:adhyatma006@gmail.com">
+    <img src="https://img.shields.io/badge/Email-0A1510?style=for-the-badge&logo=gmail&logoColor=00FF88&labelColor=040506" alt="Email"/>
+  </a>
+</p>
 
+---
 ---
 
 <!-- ========================================================= -->
