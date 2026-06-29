@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 430" width="850" height="430">
+<defs>
+  <linearGradient id="fpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#040506"/>
+    <stop offset="50%" stop-color="#081312"/>
+    <stop offset="100%" stop-color="#0A1E17"/>
+  </linearGradient>
+  <pattern id="fpGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+    <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#00FF88" stroke-width="0.5" stroke-opacity="0.04"/>
+  </pattern>
+  <filter id="fpGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<style>
+  @keyframes fpBreathe{0%,100%{stroke-opacity:0.25}50%{stroke-opacity:0.65}}
+  @keyframes fpBlink{0%,100%{opacity:1}50%{opacity:0.3}}
+  @keyframes fpRing{0%{r:4px;opacity:0.8}100%{r:10px;opacity:0}}
+  @keyframes fpFlow{0%{stroke-dashoffset:80}100%{stroke-dashoffset:0}}
+  .fpBorder{fill:none;stroke:#00FF88;stroke-width:1.5;animation:fpBreathe 4s ease-in-out infinite}
+  .fpCorner{fill:none;stroke:#00FF88;stroke-opacity:0.8;filter:url(#fpGlow)}
+  .fpDot{animation:fpBlink 2.5s infinite ease-in-out}
+  .fpRingA{animation:fpRing 2.5s infinite cubic-bezier(0.215,0.61,0.355,1)}
+  .fpTrace{stroke:#00FF88;stroke-opacity:0.15;stroke-dasharray:8 12;animation:fpFlow 6s linear infinite;fill:none;stroke-width:1}
+  .fpCard{fill:#0A1510;fill-opacity:0.9;stroke:#00FF88;stroke-opacity:0.18;stroke-width:1;rx:6}
+  .fpCardCorner{fill:none;stroke:#00FF88;stroke-width:1.5}
+  .fpName{font-family:'SFMono-Regular',Consolas,monospace;font-size:14px;font-weight:bold;fill:#E9FFD7}
+  .fpDesc{font-family:'SFMono-Regular',Consolas,monospace;font-size:10px;fill:#6B8A78}
+  .fpTag{fill:#0D2016;fill-opacity:0.9;stroke:#00FF88;stroke-opacity:0.25;stroke-width:0.8;rx:3}
+  .fpTagTxt{font-family:'SFMono-Regular',Consolas,monospace;font-size:9px;fill:#C8FFA0}
+  .fpBtn{fill:none;stroke:#00FF88;stroke-opacity:0.5;stroke-width:1;rx:3}
+  .fpBtnTxt{font-family:'SFMono-Regular',Consolas,monospace;font-size:9px;font-weight:bold;fill:#7CFF5E}
+  .fpStatusTxt{font-family:'SFMono-Regular',Consolas,monospace;font-size:8px;fill:#7CFF5E}
+  .fpHead{font-family:'SFMono-Regular',Consolas,monospace;font-size:22px;font-weight:bold;fill:#E9FFD7}
+  .fpStatus{font-family:'SFMono-Regular',Consolas,monospace;font-size:10px;font-weight:bold;fill:#7CFF5E}
+  .fpMute{font-family:'SFMono-Regular',Consolas,monospace;fill:#3A5E48}
+</style>
+
+<!-- Background -->
+<rect width="850" height="430" fill="url(#fpBg)" rx="10"/>
+<rect width="850" height="430" fill="url(#fpGrid)" rx="10"/>
+
+<!-- PCB Traces -->
+<g fill="none" stroke-opacity="0.12" stroke-width="1">
+  <path d="M 15 70 L 15 20 L 70 20" stroke="#00FF88"/>
+  <circle cx="70" cy="20" r="2" fill="#00FF88" fill-opacity="0.3" stroke="none"/>
+  <path d="M 835 360 L 835 410 L 780 410" stroke="#00FF88"/>
+  <circle cx="780" cy="410" r="2" fill="#00FF88" fill-opacity="0.3" stroke="none"/>
+  <path d="M 425 80 L 425 400" stroke="#1A4A28" stroke-opacity="0.3" stroke-dasharray="4 8"/>
+</g>
+
+<!-- Outer Border -->
+<path d="M 20 8 L 830 8 L 842 20 L 842 410 L 830 422 L 20 422 L 8 410 L 8 20 Z" class="fpBorder"/>
+<path d="M 8 45 L 8 20 L 20 8 L 45 8" class="fpCorner" stroke-width="2"/>
+<path d="M 842 45 L 842 20 L 830 8 L 805 8" class="fpCorner" stroke-width="2"/>
+<path d="M 8 385 L 8 410 L 20 422 L 45 422" class="fpCorner" stroke-width="2"/>
+<path d="M 842 385 L 842 410 L 830 422 L 805 422" class="fpCorner" stroke-width="2"/>
+
+<!-- Header -->
+<circle cx="35" cy="35" r="4" fill="#7CFF5E" class="fpDot"/>
+<circle cx="35" cy="35" r="4" stroke="#7CFF5E" stroke-width="1.5" fill="none" class="fpRingA"/>
+<text x="50" y="39" class="fpStatus">SYS.PROJECTS // DEPLOYED</text>
+<text x="30" y="64" class="fpHead">FEATURED PROJECTS</text>
+<text x="815" y="64" class="fpMute" font-size="9" text-anchor="end">ACTIVE_DEPLOYMENTS: 4</text>
+<line x1="10" y1="74" x2="840" y2="74" stroke="#00FF88" stroke-opacity="0.2"/>
+
+<!-- ═══════════ CARD 1: VoiceShield AI (top-left) ═══════════ -->
+<g transform="translate(25, 85)">
+  <rect width="390" height="155" class="fpCard"/>
+  <path d="M 0 20 L 0 0 L 20 0" class="fpCardCorner"/>
+  <path d="M 370 0 L 390 0 L 390 20" class="fpCardCorner"/>
+  <path d="M 0 135 L 0 155 L 20 155" class="fpCardCorner"/>
+  <path d="M 370 155 L 390 155 L 390 135" class="fpCardCorner"/>
+
+  <circle cx="18" cy="20" r="3.5" fill="#7CFF5E" class="fpDot"/>
+  <text x="28" y="23" class="fpStatusTxt">● ACTIVE</text>
+  <text x="15" y="48" class="fpName">VoiceShield AI</text>
+  <text x="15" y="65" class="fpDesc">Real-time audio intelligence for proactive scam detection</text>
+
+  <rect x="15" y="78" width="82" height="18" class="fpTag"/>
+  <text x="56" y="90" class="fpTagTxt" text-anchor="middle">TypeScript</text>
+  <rect x="105" y="78" width="52" height="18" class="fpTag"/>
+  <text x="131" y="90" class="fpTagTxt" text-anchor="middle">React</text>
+  <rect x="165" y="78" width="64" height="18" class="fpTag"/>
+  <text x="197" y="90" class="fpTagTxt" text-anchor="middle">Node.js</text>
+  <rect x="237" y="78" width="58" height="18" class="fpTag"/>
+  <text x="266" y="90" class="fpTagTxt" text-anchor="middle">WebRTC</text>
+
+  <rect x="15" y="110" width="82" height="22" class="fpBtn"/>
+  <text x="56" y="125" class="fpBtnTxt" text-anchor="middle">↗ SOURCE</text>
+</g>
+
+<!-- ═══════════ CARD 2: Surakshak (top-right) ═══════════ -->
+<g transform="translate(435, 85)">
+  <rect width="390" height="155" class="fpCard"/>
+  <path d="M 0 20 L 0 0 L 20 0" class="fpCardCorner"/>
+  <path d="M 370 0 L 390 0 L 390 20" class="fpCardCorner"/>
+  <path d="M 0 135 L 0 155 L 20 155" class="fpCardCorner"/>
+  <path d="M 370 155 L 390 155 L 390 135" class="fpCardCorner"/>
+
+  <circle cx="18" cy="20" r="3.5" fill="#7CFF5E" class="fpDot"/>
+  <text x="28" y="23" class="fpStatusTxt">● ACTIVE</text>
+  <text x="15" y="48" class="fpName">Surakshak</text>
+  <text x="15" y="65" class="fpDesc">AI-driven behavioral biometrics security engine</text>
+
+  <rect x="15" y="78" width="58" height="18" class="fpTag"/>
+  <text x="44" y="90" class="fpTagTxt" text-anchor="middle">Python</text>
+  <rect x="81" y="78" width="62" height="18" class="fpTag"/>
+  <text x="112" y="90" class="fpTagTxt" text-anchor="middle">FastAPI</text>
+  <rect x="151" y="78" width="82" height="18" class="fpTag"/>
+  <text x="192" y="90" class="fpTagTxt" text-anchor="middle">TensorFlow</text>
+  <rect x="241" y="78" width="52" height="18" class="fpTag"/>
+  <text x="267" y="90" class="fpTagTxt" text-anchor="middle">React</text>
+
+  <rect x="15" y="110" width="82" height="22" class="fpBtn"/>
+  <text x="56" y="125" class="fpBtnTxt" text-anchor="middle">↗ SOURCE</text>
+</g>
+
+<!-- ═══════════ CARD 3: HalluciGuard (bottom-left) ═══════════ -->
+<g transform="translate(25, 255)">
+  <rect width="390" height="155" class="fpCard"/>
+  <path d="M 0 20 L 0 0 L 20 0" class="fpCardCorner"/>
+  <path d="M 370 0 L 390 0 L 390 20" class="fpCardCorner"/>
+  <path d="M 0 135 L 0 155 L 20 155" class="fpCardCorner"/>
+  <path d="M 370 155 L 390 155 L 390 135" class="fpCardCorner"/>
+
+  <circle cx="18" cy="20" r="3.5" fill="#7CFF5E" class="fpDot"/>
+  <text x="28" y="23" class="fpStatusTxt">● ACTIVE</text>
+  <text x="15" y="48" class="fpName">HalluciGuard</text>
+  <text x="15" y="65" class="fpDesc">ML investigation of LLM hallucination detection</text>
+
+  <rect x="15" y="78" width="58" height="18" class="fpTag"/>
+  <text x="44" y="90" class="fpTagTxt" text-anchor="middle">Python</text>
+  <rect x="81" y="78" width="88" height="18" class="fpTag"/>
+  <text x="125" y="90" class="fpTagTxt" text-anchor="middle">Scikit-learn</text>
+  <rect x="177" y="78" width="58" height="18" class="fpTag"/>
+  <text x="206" y="90" class="fpTagTxt" text-anchor="middle">Pandas</text>
+  <rect x="243" y="78" width="44" height="18" class="fpTag"/>
+  <text x="265" y="90" class="fpTagTxt" text-anchor="middle">NLP</text>
+
+  <rect x="15" y="110" width="82" height="22" class="fpBtn"/>
+  <text x="56" y="125" class="fpBtnTxt" text-anchor="middle">↗ SOURCE</text>
+</g>
+
+<!-- ═══════════ CARD 4: NeuroLearn (bottom-right) ═══════════ -->
+<g transform="translate(435, 255)">
+  <rect width="390" height="155" class="fpCard"/>
+  <path d="M 0 20 L 0 0 L 20 0" class="fpCardCorner"/>
+  <path d="M 370 0 L 390 0 L 390 20" class="fpCardCorner"/>
+  <path d="M 0 135 L 0 155 L 20 155" class="fpCardCorner"/>
+  <path d="M 370 155 L 390 155 L 390 135" class="fpCardCorner"/>
+
+  <circle cx="18" cy="20" r="3.5" fill="#7CFF5E" class="fpDot"/>
+  <text x="28" y="23" class="fpStatusTxt">● ACTIVE</text>
+  <text x="15" y="48" class="fpName">NeuroLearn</text>
+  <text x="15" y="65" class="fpDesc">AI-powered document-to-study-material transformer</text>
+
+  <rect x="15" y="78" width="58" height="18" class="fpTag"/>
+  <text x="44" y="90" class="fpTagTxt" text-anchor="middle">Python</text>
+  <rect x="81" y="78" width="62" height="18" class="fpTag"/>
+  <text x="112" y="90" class="fpTagTxt" text-anchor="middle">FastAPI</text>
+  <rect x="151" y="78" width="44" height="18" class="fpTag"/>
+  <text x="173" y="90" class="fpTagTxt" text-anchor="middle">NLP</text>
+  <rect x="203" y="78" width="52" height="18" class="fpTag"/>
+  <text x="229" y="90" class="fpTagTxt" text-anchor="middle">React</text>
+
+  <rect x="15" y="110" width="82" height="22" class="fpBtn"/>
+  <text x="56" y="125" class="fpBtnTxt" text-anchor="middle">↗ SOURCE</text>
+</g>
+
+<!-- Footer -->
+<text x="815" y="418" class="fpMute" font-size="7" text-anchor="end">DEPLOYMENT_LOG: STABLE // UPTIME: 99.9%</text>
+</svg>
