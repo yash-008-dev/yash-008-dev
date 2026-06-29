@@ -1,4 +1,3 @@
-<g transform="rotate(-5 620 490)"
 <svg viewBox="0 0 1240 980" xmlns="http://www.w3.org/2000/svg" width="1240" height="980">
 <title>Adhyatma Singh Chauhan — Developer Workspace</title>
 <defs>
@@ -77,6 +76,7 @@
     }
     @keyframes termCursor { 0%,49%{opacity:1} 50%,100%{opacity:0} }
   </style>
+  <g transform="rotate(-5 620 490)">
 </defs>
 
 <!-- BACKGROUND -->
@@ -858,6 +858,5 @@
 <!-- Outer border decoration -->
 <rect x="2" y="2" width="1236" height="976" rx="4" fill="none" stroke="#0A2A12" stroke-width="1" opacity="0.6"/>
 <rect x="5" y="5" width="1230" height="970" rx="3" fill="none" stroke="#1AFF5A" stroke-width="0.3" opacity="0.15"/>
-
+</g>
 </svg>
->
