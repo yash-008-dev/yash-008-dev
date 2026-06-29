@@ -122,9 +122,8 @@
   <!-- Code Area: Content (Font scaled slightly down to guarantee fitment) -->
   <g font-size="22" class="mono code-green" filter="url(#glow)">
     <text x="210" y="175"><tspan class="type-line line-1">public class Adhyatma {</tspan></text>
-    <text x="250" y="220"><tspan class="type-line line-2">public static void main(String[] args) {</tspan></text>
-    <text x="250" y="265"><tspan class="type-line line-3"></tspan></text>
-    <text x="290" y="310"><tspan class="type-line line-4">while (learning()) {</tspan></text>
+    <text x="225" y="220"><tspan class="type-line line-2">public static void main(String[] args) {</tspan></text>
+    <text x="290" y="310"><tspan class="type-line line-4">while(learning()) {</tspan></text>
     <text x="330" y="355"><tspan class="type-line line-5">build();</tspan></text>
     <text x="330" y="400"><tspan class="type-line line-6">improve();</tspan></text>
     <text x="330" y="445"><tspan class="type-line line-7">contribute();</tspan></text>
