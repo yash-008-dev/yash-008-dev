@@ -1,0 +1,204 @@
+<svg width="1000" height="750" viewBox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Font Import -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      
+      .mono { font-family: 'Fira Code', monospace; }
+      .code-green { fill: #33ff33; }
+      .dim-green { fill: #1a5c1a; }
+      .bg-black { fill: #050a05; }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor { animation: blink 1s infinite; fill: #33ff33; }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      .node-pulse { animation: pulse 2s infinite ease-in-out; }
+
+      /* --- Typing Animation Styles --- */
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+
+      .type-line {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing 0.8s steps(25, end) forwards;
+      }
+      
+      /* Animates the cursor's coordinates to track along with the typing flow */
+      @keyframes cursorControl {
+        0%, 4% { transform: translate(0px, 0px); opacity: 1; }           /* Line 1 Start */
+        10%, 14% { transform: translate(280px, 0px); opacity: 1; }       /* Line 1 End */
+        15%, 19% { transform: translate(40px, 45px); opacity: 1; }        /* Line 2 Start */
+        25%, 29% { transform: translate(550px, 45px); opacity: 1; }       /* Line 2 End */
+        30%, 34% { transform: translate(40px, 90px); opacity: 1; }        /* Line 3 Start */
+        40%, 44% { transform: translate(80px, 135px); opacity: 1; }       /* Line 4 Start */
+        50%, 54% { transform: translate(390px, 135px); opacity: 1; }      /* Line 4 End */
+        55%, 59% { transform: translate(120px, 180px); opacity: 1; }      /* Line 5 Start */
+        65%, 69% { transform: translate(240px, 180px); opacity: 1; }      /* Line 5 End */
+        70%, 74% { transform: translate(120px, 225px); opacity: 1; }      /* Line 6 Start */
+        80%, 84% { transform: translate(270px, 225px); opacity: 1; }      /* Line 6 End */
+        85%, 89% { transform: translate(120px, 270px); opacity: 1; }      /* Line 7 Start */
+        91%, 94% { transform: translate(300px, 270px); opacity: 1; }      /* Line 7 End */
+        95%, 97% { transform: translate(80px, 315px); opacity: 1; }       /* Line 8 End */
+        98% { transform: translate(40px, 360px); opacity: 1; }            /* Line 9 Start */
+        100% { transform: translate(55px, 360px); opacity: 1; }           /* Line 9 End */
+      }
+      .cursor-follow {
+        animation: cursorControl 10s steps(1, end) forwards;
+      }
+    </style>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="2" fill="#000" fill-opacity="0.2" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="750" fill="#020502" />
+  
+  <!-- Circuitry Traces (Left) -->
+  <g stroke="#1a5c1a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M0 200 L50 200 L80 230 L110 230" />
+    <path d="M0 250 L40 250 L70 280 L110 280" />
+    <path d="M0 350 L60 350 L90 320 L110 320" />
+    <path d="M0 450 L30 450 L70 490 L110 490" />
+    <!-- Nodes -->
+    <circle cx="110" cy="230" r="3" fill="#33ff33" class="node-pulse" />
+    <circle cx="110" cy="320" r="3" fill="#33ff33" class="node-pulse" />
+  </g>
+
+  <!-- Circuitry Traces (Right) -->
+  <g stroke="#1a5c1a" stroke-width="1.5" fill="none" opacity="0.6" transform="scale(-1, 1) translate(-1000, 0)">
+    <path d="M0 220 L60 220 L90 250 L110 250" />
+    <path d="M0 300 L40 300 L70 270 L110 270" />
+    <path d="M0 400 L50 400 L80 430 L110 430" />
+    <circle cx="110" cy="250" r="3" fill="#33ff33" class="node-pulse" />
+    <circle cx="110" cy="430" r="3" fill="#33ff33" class="node-pulse" />
+  </g>
+
+  <!-- Main Terminal Frame -->
+  <rect x="120" y="80" width="760" height="520" rx="10" fill="#050a05" stroke="#1a5c1a" stroke-width="2" filter="url(#glow)" />
+  
+  <!-- Terminal Header -->
+  <text x="145" y="115" class="mono code-green" font-size="16" letter-spacing="2">DEV-TERMINAL</text>
+  <g transform="translate(800, 105)">
+    <circle cx="0" cy="0" r="5" fill="#1a5c1a" />
+    <circle cx="20" cy="0" r="5" fill="#1a5c1a" />
+    <circle cx="40" cy="0" r="5" fill="#1a5c1a" />
+  </g>
+  <line x1="120" y1="135" x2="880" y2="135" stroke="#1a5c1a" stroke-width="1" />
+
+  <!-- Code Area: Line Numbers -->
+  <g font-size="16" class="mono dim-green" text-anchor="end">
+    <text x="175" y="175">01</text>
+    <text x="175" y="220">02</text>
+    <text x="175" y="265">03</text>
+    <text x="175" y="310">04</text>
+    <text x="175" y="355">05</text>
+    <text x="175" y="400">06</text>
+    <text x="175" y="445">07</text>
+    <text x="175" y="490">08</text>
+    <text x="175" y="535">09</text>
+  </g>
+
+  <!-- Code Area: Content (Font scaled slightly down to guarantee fitment) -->
+  <g font-size="22" class="mono code-green" filter="url(#glow)">
+    <text x="210" y="175"><tspan class="type-line line-1">public class Adhyatma {</tspan></text>
+    <text x="225" y="220"><tspan class="type-line line-2">public static void main(String[] args) {</tspan></text>
+    <text x="290" y="310"><tspan class="type-line line-4">while(learning()) {</tspan></text>
+    <text x="330" y="355"><tspan class="type-line line-5">build();</tspan></text>
+    <text x="330" y="400"><tspan class="type-line line-6">improve();</tspan></text>
+    <text x="330" y="445"><tspan class="type-line line-7">contribute();</tspan></text>
+    <text x="290" y="490"><tspan class="type-line line-8">}</tspan></text>
+    <text x="250" y="535"><tspan class="type-line line-9">}</tspan></text>
+    <text x="210" y="580">}</text>
+
+    <!-- Animated Blinking Terminal Cursor tracking layout positions -->
+    <g class="cursor-follow">
+      <rect x="210" y="151" width="12" height="24" class="cursor" />
+    </g>
+  </g>
+
+  <!-- Right Metadata Panel -->
+  <line x1="720" y1="180" x2="720" y2="520" stroke="#1a5c1a" stroke-width="1" />
+  <g x="740" font-size="12" class="mono dim-green" letter-spacing="1">
+    <text x="740" y="195">// LANG: JAVA</text>
+    <text x="740" y="220">// MODE: FOCUS</text>
+    <text x="740" y="245">// STATUS: ACTIVE</text>
+    <text x="740" y="270">// COMMIT: DAILY</text>
+    <text x="740" y="295">// VERSION: 2.0.1</text>
+  </g>
+
+  <!-- Java Logo (Stylized) -->
+  <g transform="translate(750, 400) scale(1.2)" filter="url(#glow)">
+    <path d="M15 15 Q 10 0, 25 0 Q 30 10, 20 15" fill="none" stroke="#33ff33" stroke-width="2" />
+    <path d="M5 25 Q 25 15, 45 25 Q 25 35, 5 25 Z" fill="#33ff33" opacity="0.3" stroke="#33ff33" stroke-width="1"/>
+    <text x="5" y="50" class="mono code-green" font-size="14" font-weight="bold">Java</text>
+  </g>
+
+  <!-- Bottom HUD Panel -->
+  <rect x="120" y="620" width="760" height="80" rx="10" fill="#050a05" stroke="#1a5c1a" stroke-width="2" />
+  
+  <!-- Bottom HUD Content -->
+  <g transform="translate(140, 645)">
+    <!-- Section: System -->
+    <rect x="0" y="0" width="30" height="30" stroke="#33ff33" fill="none" />
+    <rect x="5" y="5" width="20" height="20" fill="#33ff33" opacity="0.4" />
+    <text x="60" y="10" class="mono dim-green" font-size="12">SYSTEM STATUS</text>
+    <text x="60" y="30" class="mono code-green" font-size="16">ONLINE</text>
+
+    <!-- Section: Uptime -->
+    <line x1="180" y1="-10" x2="180" y2="40" stroke="#1a5c1a" />
+    <text x="200" y="10" class="mono dim-green" font-size="12">UPTIME</text>
+    <text x="200" y="30" class="mono code-green" font-size="16">99.99%</text>
+
+    <!-- Section: Mode -->
+    <line x1="330" y1="-10" x2="330" y2="40" stroke="#1a5c1a" />
+    <text x="350" y="10" class="mono dim-green" font-size="12">BUILD MODE</text>
+    <text x="350" y="30" class="mono code-green" font-size="16">ACTIVE</text>
+
+    <!-- Section: Focus Bar -->
+    <line x1="500" y1="-10" x2="500" y2="40" stroke="#1a5c1a" />
+    <text x="520" y="10" class="mono dim-green" font-size="12">FOCUS LEVEL</text>
+    <g transform="translate(520, 20)">
+      <rect x="0" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="20" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="40" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="60" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="80" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="100" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="120" y="0" width="15" height="15" stroke="#1a5c1a" fill="none" />
+      <rect x="140" y="0" width="15" height="15" stroke="#1a5c1a" fill="none" />
+      <rect x="160" y="0" width="15" height="15" stroke="#1a5c1a" fill="none" />
+    </g>
+  </g>
+
+  <!-- HUD Corner Accents -->
+  <g stroke="#33ff33" stroke-width="3" fill="none" filter="url(#glow)">
+    <path d="M100 50 L50 50 L50 100" />
+    <path d="M900 50 L950 50 L950 100" />
+    <path d="M100 700 L50 700 L50 650" />
+    <path d="M900 700 L950 700 L950 650" />
+  </g>
+
+  <!-- Scanline Overlay -->
+  <rect width="1000" height="750" fill="url(#scanlines)" pointer-events="none" />
+</svg>
