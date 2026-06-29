@@ -76,8 +76,8 @@
     }
     @keyframes termCursor { 0%,49%{opacity:1} 50%,100%{opacity:0} }
   </style>
-  <g transform="rotate(-5 620 490)">
 </defs>
+  <g transform="rotate(-5 620 490)">
 
 <!-- BACKGROUND -->
 <rect width="1240" height="980" fill="url(#bgGrad)"/>
