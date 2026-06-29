@@ -1,862 +1,158 @@
-<svg viewBox="0 0 1240 980" xmlns="http://www.w3.org/2000/svg" width="1240" height="980">
-<title>Adhyatma Singh Chauhan — Developer Workspace</title>
-<defs>
-  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#010804"/>
-    <stop offset="50%" stop-color="#020C06"/>
-    <stop offset="100%" stop-color="#010804"/>
-  </linearGradient>
-  <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#021208"/>
-    <stop offset="100%" stop-color="#010804"/>
-  </linearGradient>
-  <linearGradient id="monitorFrame" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#0A2010"/>
-    <stop offset="100%" stop-color="#040E06"/>
-  </linearGradient>
-  <linearGradient id="barGreen" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#1AFF5A"/>
-    <stop offset="100%" stop-color="#0ADF3A"/>
-  </linearGradient>
-  <linearGradient id="panelBg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#030F07"/>
-    <stop offset="100%" stop-color="#020A05"/>
-  </linearGradient>
-  <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#0A2A10"/>
-    <stop offset="100%" stop-color="#020804"/>
-  </linearGradient>
-  <radialGradient id="glowGreen" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#1AFF5A" stop-opacity="0.4"/>
-    <stop offset="100%" stop-color="#1AFF5A" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="screenGlow" cx="50%" cy="30%" r="60%">
-    <stop offset="0%" stop-color="#0A3015" stop-opacity="0.8"/>
-    <stop offset="100%" stop-color="#010804" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="mugSteam" cx="50%" cy="100%" r="50%">
-    <stop offset="0%" stop-color="#0D2010" stop-opacity="0.6"/>
-    <stop offset="100%" stop-color="#0D2010" stop-opacity="0"/>
-  </radialGradient>
-  <filter id="glow">
-    <feGaussianBlur stdDeviation="2" result="blur"/>
-    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-  </filter>
-  <filter id="softGlow">
-    <feGaussianBlur stdDeviation="3" result="blur"/>
-    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-  </filter>
-  <style>
-    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
-    @keyframes pulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
-    @keyframes steamRise1 {
-      0%{transform:translate(0,0) scaleX(1);opacity:0.4}
-      50%{transform:translate(-4px,-20px) scaleX(1.3);opacity:0.2}
-      100%{transform:translate(2px,-40px) scaleX(0.8);opacity:0}
-    }
-    @keyframes steamRise2 {
-      0%{transform:translate(0,0) scaleX(1);opacity:0.3}
-      50%{transform:translate(5px,-18px) scaleX(0.9);opacity:0.15}
-      100%{transform:translate(-3px,-38px) scaleX(1.2);opacity:0}
-    }
-    @keyframes clockTick {
-      0%,100%{opacity:1} 50%{opacity:0.5}
-    }
-    @keyframes traceFlow {
-      0%{stroke-dashoffset:200} 100%{stroke-dashoffset:0}
-    }
-    @keyframes nodeGlow {
-      0%,100%{r:3;opacity:0.6} 50%{r:4.5;opacity:1}
-    }
-    @keyframes barAnimate {
-      0%{opacity:0.5} 50%{opacity:1} 100%{opacity:0.5}
-    }
-    @keyframes scrollCode {
-      0%{transform:translateY(0)} 100%{transform:translateY(-20px)}
-    }
-    @keyframes termCursor { 0%,49%{opacity:1} 50%,100%{opacity:0} }
-  </style>
-</defs>
-  <g transform="rotate(-5 620 490)">
+<svg width="1000" height="750" viewBox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Font Import -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      
+      .mono { font-family: 'Fira Code', monospace; }
+      .code-green { fill: #33ff33; }
+      .dim-green { fill: #1a5c1a; }
+      .bg-black { fill: #050a05; }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor { animation: blink 1s infinite; fill: #33ff33; }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      .node-pulse { animation: pulse 2s infinite ease-in-out; }
+    </style>
 
-<!-- BACKGROUND -->
-<rect width="1240" height="980" fill="url(#bgGrad)"/>
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
 
-<!-- Subtle scan lines -->
-<g opacity="0.015">
-  <rect width="1240" height="1" y="20" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="40" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="60" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="80" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="100" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="120" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="140" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="160" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="180" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="200" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="220" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="240" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="260" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="280" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="300" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="320" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="340" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="360" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="380" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="400" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="420" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="440" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="460" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="480" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="500" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="520" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="540" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="560" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="580" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="600" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="620" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="640" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="660" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="680" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="700" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="720" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="740" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="760" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="780" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="800" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="820" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="840" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="860" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="880" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="900" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="920" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="940" fill="#1AFF5A"/>
-  <rect width="1240" height="1" y="960" fill="#1AFF5A"/>
-</g>
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="2" fill="#000" fill-opacity="0.2" />
+    </pattern>
+  </defs>
 
-<!-- PCB Traces (background circuit lines) -->
-<g fill="none" stroke="#0D3018" stroke-width="0.8" opacity="0.6">
-  <polyline points="240,120 290,120 310,140 380,140"/>
-  <polyline points="240,200 310,200 330,220 410,220"/>
-  <polyline points="240,300 300,300 320,280 390,280"/>
-  <polyline points="240,400 295,400 315,420 400,420"/>
-  <polyline points="240,500 305,500 325,480 390,480"/>
-  <polyline points="240,600 300,600 320,620 390,620"/>
-  <circle cx="310" cy="140" r="3" fill="#0D3018"/>
-  <circle cx="330" cy="220" r="3" fill="#0D3018"/>
-  <circle cx="320" cy="280" r="3" fill="#0D3018"/>
-  <circle cx="315" cy="420" r="3" fill="#0D3018"/>
-</g>
-<!-- Animated trace highlights -->
-<g fill="none" stroke="#1AFF5A" stroke-width="0.8" opacity="0.3">
-  <polyline points="240,120 290,120 310,140 360,140" stroke-dasharray="8,4">
-    <animate attributeName="stroke-dashoffset" from="24" to="0" dur="2s" repeatCount="indefinite"/>
-  </polyline>
-  <polyline points="240,300 300,300 320,280 370,280" stroke-dasharray="8,4">
-    <animate attributeName="stroke-dashoffset" from="24" to="0" dur="2.5s" repeatCount="indefinite"/>
-  </polyline>
-  <polyline points="240,500 305,500 325,480 380,480" stroke-dasharray="8,4">
-    <animate attributeName="stroke-dashoffset" from="24" to="0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
-  </polyline>
-</g>
-<!-- Trace nodes -->
-<circle cx="310" cy="140" r="3.5" fill="#1AFF5A" opacity="0.6" style="animation:pulse 2s ease-in-out infinite"/>
-<circle cx="320" cy="280" r="3.5" fill="#1AFF5A" opacity="0.5" style="animation:pulse 2.5s ease-in-out infinite 0.5s"/>
-<circle cx="325" cy="480" r="3" fill="#1AFF5A" opacity="0.4" style="animation:pulse 3s ease-in-out infinite 1s"/>
-<circle cx="315" cy="620" r="3" fill="#1AFF5A" opacity="0.4" style="animation:pulse 2.2s ease-in-out infinite 0.3s"/>
-
-<!-- ================================================================ -->
-<!-- LEFT PANELS -->
-<!-- ================================================================ -->
-
-<!-- SYSTEM STATUS PANEL -->
-<rect x="20" y="40" width="210" height="140" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.8" opacity="0.95"/>
-<rect x="20" y="40" width="210" height="140" rx="4" fill="none" stroke="#0D8030" stroke-width="0.3" opacity="0.5"/>
-<!-- Panel header line -->
-<line x1="20" y1="62" x2="230" y2="62" stroke="#1A5030" stroke-width="0.6"/>
-<text x="32" y="56" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1AFF5A" letter-spacing="1">SYSTEM STATUS</text>
-<circle cx="218" cy="53" r="4" fill="#1AFF5A" opacity="0.9" style="animation:pulse 1.5s ease-in-out infinite"/>
-
-<text x="32" y="78" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">BUILD_MODE: ACTIVE</text>
-<rect x="32" y="85" width="140" height="6" rx="2" fill="#0A1A10"/>
-<rect x="32" y="85" width="110" height="6" rx="2" fill="url(#barGreen)" opacity="0.9" style="animation:barAnimate 3s ease-in-out infinite"/>
-
-<text x="32" y="108" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">UPTIME: 99.99%</text>
-<rect x="32" y="115" width="140" height="6" rx="2" fill="#0A1A10"/>
-<rect x="32" y="115" width="138" height="6" rx="2" fill="url(#barGreen)" opacity="0.85" style="animation:barAnimate 2.5s ease-in-out infinite 0.5s"/>
-
-<!-- Mini bar chart system status -->
-<g transform="translate(32,128)">
-  <rect x="0" y="12" width="6" height="16" rx="1" fill="#1AFF5A" opacity="0.7"/>
-  <rect x="9" y="6" width="6" height="22" rx="1" fill="#1AFF5A" opacity="0.8"/>
-  <rect x="18" y="9" width="6" height="19" rx="1" fill="#1AFF5A" opacity="0.7"/>
-  <rect x="27" y="4" width="6" height="24" rx="1" fill="#1AFF5A" opacity="0.9"/>
-  <rect x="36" y="10" width="6" height="18" rx="1" fill="#1AFF5A" opacity="0.6"/>
-  <rect x="45" y="14" width="6" height="14" rx="1" fill="#1AFF5A" opacity="0.7"/>
-  <rect x="54" y="8" width="6" height="20" rx="1" fill="#1AFF5A" opacity="0.8"/>
-  <rect x="63" y="5" width="6" height="23" rx="1" fill="#1AFF5A" opacity="0.75"/>
-</g>
-
-<!-- RESOURCES PANEL -->
-<rect x="20" y="195" width="210" height="160" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.8" opacity="0.95"/>
-<rect x="20" y="195" width="210" height="160" rx="4" fill="none" stroke="#0D8030" stroke-width="0.3" opacity="0.5"/>
-<line x1="20" y1="217" x2="230" y2="217" stroke="#1A5030" stroke-width="0.6"/>
-<text x="32" y="211" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1AFF5A" letter-spacing="1">RESOURCES</text>
-
-<!-- CPU -->
-<text x="32" y="235" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">CPU</text>
-<text x="192" y="235" font-family="'Courier New',monospace" font-size="9" fill="#1AFF5A" text-anchor="end">68%</text>
-<rect x="32" y="239" width="140" height="5" rx="2" fill="#0A1A10"/>
-<rect x="32" y="239" width="95" height="5" rx="2" fill="url(#barGreen)" opacity="0.85"/>
-<!-- CPU mini bars -->
-<g transform="translate(32,248)" fill="#1AFF5A" opacity="0.5">
-  <rect x="0" y="6" width="4" height="8" rx="1"/>
-  <rect x="6" y="4" width="4" height="10" rx="1"/>
-  <rect x="12" y="7" width="4" height="7" rx="1"/>
-  <rect x="18" y="2" width="4" height="12" rx="1"/>
-  <rect x="24" y="5" width="4" height="9" rx="1"/>
-  <rect x="30" y="8" width="4" height="6" rx="1"/>
-  <rect x="36" y="3" width="4" height="11" rx="1"/>
-  <rect x="42" y="6" width="4" height="8" rx="1"/>
-  <rect x="48" y="4" width="4" height="10" rx="1"/>
-  <rect x="54" y="7" width="4" height="7" rx="1"/>
-  <rect x="60" y="1" width="4" height="13" rx="1"/>
-  <rect x="66" y="5" width="4" height="9" rx="1"/>
-</g>
-
-<!-- RAM -->
-<text x="32" y="278" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">RAM</text>
-<text x="192" y="278" font-family="'Courier New',monospace" font-size="9" fill="#1AFF5A" text-anchor="end">74%</text>
-<rect x="32" y="282" width="140" height="5" rx="2" fill="#0A1A10"/>
-<rect x="32" y="282" width="104" height="5" rx="2" fill="url(#barGreen)" opacity="0.85"/>
-<g transform="translate(32,290)" fill="#1AFF5A" opacity="0.5">
-  <rect x="0" y="5" width="4" height="9" rx="1"/>
-  <rect x="6" y="2" width="4" height="12" rx="1"/>
-  <rect x="12" y="6" width="4" height="8" rx="1"/>
-  <rect x="18" y="3" width="4" height="11" rx="1"/>
-  <rect x="24" y="7" width="4" height="7" rx="1"/>
-  <rect x="30" y="1" width="4" height="13" rx="1"/>
-  <rect x="36" y="4" width="4" height="10" rx="1"/>
-  <rect x="42" y="6" width="4" height="8" rx="1"/>
-  <rect x="48" y="2" width="4" height="12" rx="1"/>
-  <rect x="54" y="5" width="4" height="9" rx="1"/>
-  <rect x="60" y="3" width="4" height="11" rx="1"/>
-  <rect x="66" y="7" width="4" height="7" rx="1"/>
-</g>
-
-<!-- DISK -->
-<text x="32" y="318" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">DISK</text>
-<text x="192" y="318" font-family="'Courier New',monospace" font-size="9" fill="#1AFF5A" text-anchor="end">42%</text>
-<rect x="32" y="322" width="140" height="5" rx="2" fill="#0A1A10"/>
-<rect x="32" y="322" width="59" height="5" rx="2" fill="url(#barGreen)" opacity="0.85"/>
-<g transform="translate(32,330)" fill="#1AFF5A" opacity="0.5">
-  <rect x="0" y="7" width="4" height="7" rx="1"/>
-  <rect x="6" y="4" width="4" height="10" rx="1"/>
-  <rect x="12" y="8" width="4" height="6" rx="1"/>
-  <rect x="18" y="5" width="4" height="9" rx="1"/>
-  <rect x="24" y="3" width="4" height="11" rx="1"/>
-  <rect x="30" y="6" width="4" height="8" rx="1"/>
-  <rect x="36" y="8" width="4" height="6" rx="1"/>
-  <rect x="42" y="2" width="4" height="12" rx="1"/>
-  <rect x="48" y="5" width="4" height="9" rx="1"/>
-  <rect x="54" y="7" width="4" height="7" rx="1"/>
-  <rect x="60" y="4" width="4" height="10" rx="1"/>
-  <rect x="66" y="6" width="4" height="8" rx="1"/>
-</g>
-
-<!-- GIT GRAPH PANEL -->
-<rect x="20" y="370" width="210" height="165" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.8" opacity="0.95"/>
-<rect x="20" y="370" width="210" height="165" rx="4" fill="none" stroke="#0D8030" stroke-width="0.3" opacity="0.5"/>
-<line x1="20" y1="392" x2="230" y2="392" stroke="#1A5030" stroke-width="0.6"/>
-<text x="32" y="386" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1AFF5A" letter-spacing="1">GIT GRAPH</text>
-
-<!-- Git branch lines -->
-<line x1="50" y1="415" x2="50" y2="510" stroke="#1AFF5A" stroke-width="1.2" opacity="0.5"/>
-<line x1="50" y1="440" x2="70" y2="440" stroke="#1AFF5A" stroke-width="1.2" opacity="0.4"/>
-<line x1="70" y1="440" x2="70" y2="510" stroke="#1AFF5A" stroke-width="1" opacity="0.4"/>
-<line x1="70" y1="460" x2="90" y2="460" stroke="#1AFF5A" stroke-width="1" opacity="0.35"/>
-<line x1="90" y1="460" x2="90" y2="510" stroke="#1AFF5A" stroke-width="0.8" opacity="0.3"/>
-<line x1="90" y1="480" x2="110" y2="480" stroke="#1AFF5A" stroke-width="0.8" opacity="0.3"/>
-<!-- Branch nodes -->
-<circle cx="50" cy="415" r="5" fill="#1AFF5A" opacity="0.9" style="animation:pulse 2s ease-in-out infinite"/>
-<circle cx="50" cy="440" r="4" fill="#1AFF5A" opacity="0.7"/>
-<circle cx="70" cy="460" r="4" fill="#1AFF5A" opacity="0.6" style="animation:pulse 2.5s ease-in-out infinite 0.5s"/>
-<circle cx="90" cy="480" r="3.5" fill="#1AFF5A" opacity="0.5"/>
-<circle cx="90" cy="500" r="3.5" fill="#1AFF5A" opacity="0.5" style="animation:pulse 3s ease-in-out infinite 1s"/>
-<!-- Branch labels -->
-<text x="62" y="419" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">main</text>
-<text x="82" y="444" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">dev</text>
-<text x="102" y="464" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">feature/auth</text>
-<text x="118" y="484" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">fix/bug</text>
-<text x="102" y="505" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">v1.2.0</text>
-
-<!-- NETWORK PANEL -->
-<rect x="20" y="548" width="210" height="175" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.8" opacity="0.95"/>
-<rect x="20" y="548" width="210" height="175" rx="4" fill="none" stroke="#0D8030" stroke-width="0.3" opacity="0.5"/>
-<line x1="20" y1="570" x2="230" y2="570" stroke="#1A5030" stroke-width="0.6"/>
-<text x="32" y="564" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1AFF5A" letter-spacing="1">NETWORK</text>
-
-<!-- Globe wireframe -->
-<g transform="translate(110,640)">
-  <ellipse cx="0" cy="0" rx="52" ry="52" fill="none" stroke="#1AFF5A" stroke-width="0.6" opacity="0.4"/>
-  <ellipse cx="0" cy="0" rx="52" ry="20" fill="none" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-  <ellipse cx="0" cy="0" rx="30" ry="52" fill="none" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-  <ellipse cx="0" cy="0" rx="10" ry="52" fill="none" stroke="#1AFF5A" stroke-width="0.4" opacity="0.25"/>
-  <ellipse cx="0" cy="0" rx="52" ry="35" fill="none" stroke="#1AFF5A" stroke-width="0.4" opacity="0.2"/>
-  <line x1="-52" y1="0" x2="52" y2="0" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-  <line x1="0" y1="-52" x2="0" y2="52" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-  <!-- Globe glow center -->
-  <circle cx="0" cy="0" r="8" fill="#1AFF5A" opacity="0.15" style="animation:pulse 3s ease-in-out infinite"/>
-  <circle cx="0" cy="0" r="3" fill="#1AFF5A" opacity="0.5" style="animation:pulse 2s ease-in-out infinite"/>
-  <!-- Dots on globe -->
-  <circle cx="-20" cy="-15" r="2" fill="#1AFF5A" opacity="0.6" style="animation:pulse 2.5s ease-in-out infinite 0.3s"/>
-  <circle cx="25" cy="10" r="2" fill="#1AFF5A" opacity="0.5" style="animation:pulse 3s ease-in-out infinite 0.8s"/>
-  <circle cx="10" cy="-30" r="1.5" fill="#1AFF5A" opacity="0.4" style="animation:pulse 2.2s ease-in-out infinite 1.2s"/>
-  <circle cx="-35" cy="5" r="1.5" fill="#1AFF5A" opacity="0.4" style="animation:pulse 2.8s ease-in-out infinite 0.6s"/>
-</g>
-
-<text x="32" y="705" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">STATUS: CONNECTED</text>
-<text x="32" y="720" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">LATENCY: 12ms</text>
-<!-- Waveform -->
-<g transform="translate(32,703)" fill="none" stroke="#1AFF5A" stroke-width="0.8" opacity="0.5">
-  <polyline points="0,0 8,-5 16,5 24,-8 32,3 40,-4 48,6 56,-2 72,4 80,-6 88,2 96,-3 104,5 112,-1 120,0 140,0"/>
-</g>
-
-<!-- ================================================================ -->
-<!-- MONITOR / SCREEN -->
-<!-- ================================================================ -->
-
-<!-- Monitor stand/base -->
-<rect x="545" y="740" width="160" height="20" rx="4" fill="#071408" stroke="#0D3018" stroke-width="0.8"/>
-<rect x="610" y="720" width="30" height="25" rx="2" fill="#071408" stroke="#0D3018" stroke-width="0.8"/>
-<rect x="490" y="756" width="270" height="12" rx="6" fill="#050E08" stroke="#0D3018" stroke-width="0.8"/>
-
-<!-- Monitor frame outer -->
-<rect x="380" y="70" width="720" height="660" rx="12" fill="url(#monitorFrame)" stroke="#1A4A22" stroke-width="1.2"/>
-<!-- Monitor bezel glow -->
-<rect x="380" y="70" width="720" height="660" rx="12" fill="none" stroke="#1AFF5A" stroke-width="0.4" opacity="0.3" style="animation:pulse 4s ease-in-out infinite"/>
-
-<!-- Screen area -->
-<rect x="394" y="84" width="692" height="634" rx="6" fill="url(#screenGrad)"/>
-<!-- Screen glow overlay -->
-<rect x="394" y="84" width="692" height="634" rx="6" fill="url(#screenGlow)" opacity="0.6"/>
-
-<!-- Screen border inner -->
-<rect x="394" y="84" width="692" height="634" rx="6" fill="none" stroke="#1AFF5A" stroke-width="0.5" opacity="0.4"/>
-
-<!-- Monitor camera dot -->
-<circle cx="745" cy="77" r="3" fill="#0A2010" stroke="#1AFF5A" stroke-width="0.5" opacity="0.6"/>
-
-<!-- ================================================================ -->
-<!-- VS CODE EDITOR INSIDE SCREEN -->
-<!-- ================================================================ -->
-
-<!-- Tab bar -->
-<rect x="394" y="84" width="692" height="28" rx="6" fill="#021008"/>
-<rect x="394" y="98" width="692" height="14" fill="#021008"/>
-<!-- Tab dots -->
-<circle cx="412" cy="98" r="5" fill="#0A2010" stroke="#1AFF5A" stroke-width="0.5" opacity="0.7"/>
-<circle cx="426" cy="98" r="5" fill="#0A2010" stroke="#1AFF5A" stroke-width="0.5" opacity="0.7"/>
-<circle cx="440" cy="98" r="5" fill="#0A2010" stroke="#1AFF5A" stroke-width="0.5" opacity="0.7"/>
-
-<!-- Active tab: main.py -->
-<rect x="458" y="88" width="90" height="24" rx="3" fill="#041A0A" stroke="#1AFF5A" stroke-width="0.6" opacity="0.8"/>
-<text x="465" y="103" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A">&#128196; main.py</text>
-<text x="540" y="103" font-family="'Courier New',monospace" font-size="9" fill="#1AFF5A" opacity="0.5">&#215;</text>
-
-<!-- Sidebar / Explorer -->
-<rect x="394" y="112" width="120" height="606" fill="#010C05"/>
-<line x1="514" y1="112" x2="514" y2="718" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-<text x="405" y="130" font-family="'Courier New',monospace" font-size="8" font-weight="700" fill="#0FAA3A" letter-spacing="1">EXPLORER</text>
-<text x="405" y="148" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#8964; ASC-DEV</text>
-<text x="412" y="163" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#9655; src</text>
-<text x="418" y="177" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#9655; modules</text>
-<text x="418" y="191" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#9655; utils</text>
-<text x="418" y="205" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#9655; models</text>
-<text x="418" y="219" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#9655; config</text>
-<!-- Active file highlighted -->
-<rect x="403" y="226" width="108" height="14" rx="2" fill="#0D3018" opacity="0.7"/>
-<text x="418" y="237" font-family="'Courier New',monospace" font-size="8" fill="#1AFF5A">&#128196; main.py</text>
-<text x="418" y="251" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#128196; auth.py</text>
-<text x="418" y="265" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#128196; database.py</text>
-<text x="418" y="279" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#128196; README.md</text>
-<text x="418" y="293" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">&#128196; requirements.txt</text>
-
-<!-- Scrollbar -->
-<rect x="1073" y="112" width="6" height="500" rx="3" fill="#021008"/>
-<rect x="1073" y="140" width="6" height="80" rx="3" fill="#1AFF5A" opacity="0.4"/>
-
-<!-- Right gutter (minimap) -->
-<rect x="1005" y="112" width="68" height="500" fill="#010C05" opacity="0.8"/>
-<g opacity="0.3" fill="#1AFF5A" font-family="'Courier New',monospace" font-size="3">
-  <text x="1010" y="125">def solve(problem):</text>
-  <text x="1010" y="130">    plan = analyze(problem)</text>
-  <text x="1010" y="135">    data = fetch_data(plan)</text>
-  <text x="1010" y="140">    model = build_model(data)</text>
-  <text x="1010" y="145">    result = model.predict(problem)</text>
-  <text x="1010" y="150">    return result</text>
-  <text x="1010" y="160">class Developer:</text>
-  <text x="1010" y="165">    def __init__(self):</text>
-  <text x="1010" y="170">        self.mindset = "Build"</text>
-  <text x="1010" y="175">        self.coffee = 1</text>
-  <text x="1010" y="185">    def code(self):</text>
-  <text x="1010" y="190">        while True:</text>
-  <text x="1010" y="195">            idea = self.think()</text>
-  <text x="1010" y="200">            code = self.build(idea)</text>
-  <text x="1010" y="205">            self.test(code)</text>
-  <text x="1010" y="210">            self.push(code)</text>
-</g>
-<!-- Minimap highlight -->
-<rect x="1005" y="122" width="68" height="60" fill="#1AFF5A" opacity="0.05" rx="2"/>
-<rect x="1005" y="122" width="2" height="60" fill="#1AFF5A" opacity="0.3"/>
-
-<!-- CODE EDITOR CONTENT -->
-<rect x="514" y="112" width="491" height="500" fill="#010E06"/>
-<!-- Line number gutter -->
-<rect x="514" y="112" width="36" height="500" fill="#010C05"/>
-<line x1="550" y1="112" x2="550" y2="612" stroke="#1AFF5A" stroke-width="0.3" opacity="0.2"/>
-
-<!-- Code lines with syntax highlighting -->
-<!-- Line 1 -->
-<text x="520" y="132" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">1</text>
-<text x="558" y="132" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">def </text>
-<text x="582" y="132" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">solve</text>
-<text x="619" y="132" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(</text>
-<text x="625" y="132" font-family="'Courier New',monospace" font-size="10" fill="#8AFFAA">problem</text>
-<text x="678" y="132" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">):</text>
-
-<!-- Line 2 -->
-<text x="520" y="148" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">2</text>
-<text x="578" y="148" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">plan = </text>
-<text x="624" y="148" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">analyze</text>
-<text x="673" y="148" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(problem)</text>
-
-<!-- Line 3 -->
-<text x="520" y="164" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">3</text>
-<text x="578" y="164" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">data = </text>
-<text x="622" y="164" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">fetch_data</text>
-<text x="691" y="164" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(plan)</text>
-
-<!-- Line 4 -->
-<text x="520" y="180" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">4</text>
-<text x="578" y="180" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">model = </text>
-<text x="628" y="180" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">build_model</text>
-<text x="707" y="180" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(data)</text>
-
-<!-- Line 5 -->
-<text x="520" y="196" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">5</text>
-<text x="578" y="196" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">result = model.</text>
-<text x="671" y="196" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">predict</text>
-<text x="718" y="196" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(problem)</text>
-
-<!-- Line 6 -->
-<text x="520" y="212" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">6</text>
-<text x="578" y="212" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">return </text>
-<text x="622" y="212" font-family="'Courier New',monospace" font-size="10" fill="#8AFFAA">result</text>
-
-<!-- Line 7 (blank) -->
-<text x="520" y="228" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">7</text>
-
-<!-- Line 8 -->
-<text x="520" y="244" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">8</text>
-<text x="558" y="244" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">class </text>
-<text x="596" y="244" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">Developer</text>
-<text x="650" y="244" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">:</text>
-
-<!-- Line 9 -->
-<text x="520" y="260" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">9</text>
-<text x="578" y="260" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">def </text>
-<text x="602" y="260" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">__init__</text>
-<text x="652" y="260" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(self):</text>
-
-<!-- Active line highlight -->
-<rect x="514" y="268" width="491" height="16" fill="#0A2810" opacity="0.5"/>
-<!-- Line 10 -->
-<text x="520" y="280" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">10</text>
-<text x="598" y="280" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">self.mindset = </text>
-<text x="694" y="280" font-family="'Courier New',monospace" font-size="10" fill="#AAFFBB">"Build"</text>
-
-<!-- Line 11 -->
-<text x="520" y="296" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">11</text>
-<text x="598" y="296" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">self.coffee = </text>
-<text x="686" y="296" font-family="'Courier New',monospace" font-size="10" fill="#8AFFAA">1</text>
-
-<!-- Line 12 blank -->
-<text x="520" y="312" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">12</text>
-
-<!-- Line 13 -->
-<text x="520" y="328" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">13</text>
-<text x="578" y="328" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">def </text>
-<text x="602" y="328" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">code</text>
-<text x="626" y="328" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(self):</text>
-
-<!-- Line 14 -->
-<text x="520" y="344" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">14</text>
-<text x="598" y="344" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">while </text>
-<text x="634" y="344" font-family="'Courier New',monospace" font-size="10" fill="#8AFFAA">True</text>
-<text x="658" y="344" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">:</text>
-
-<!-- Line 15 -->
-<text x="520" y="360" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">15</text>
-<text x="618" y="360" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">idea = self.</text>
-<text x="686" y="360" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">think</text>
-<text x="716" y="360" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">()</text>
-
-<!-- Line 16 -->
-<text x="520" y="376" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">16</text>
-<text x="618" y="376" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">code = self.</text>
-<text x="686" y="376" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">build</text>
-<text x="716" y="376" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(idea)</text>
-
-<!-- Line 17 -->
-<text x="520" y="392" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">17</text>
-<text x="618" y="392" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">self.</text>
-<text x="644" y="392" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">test</text>
-<text x="668" y="392" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(code)</text>
-
-<!-- Line 18 -->
-<text x="520" y="408" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">18</text>
-<text x="618" y="408" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">self.</text>
-<text x="644" y="408" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">push</text>
-<text x="668" y="408" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">(code)</text>
-
-<!-- Line 19 blank -->
-<text x="520" y="424" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">19</text>
-
-<!-- Line 20 -->
-<text x="520" y="440" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">20</text>
-<text x="558" y="440" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6">if </text>
-<text x="574" y="440" font-family="'Courier New',monospace" font-size="10" fill="#8AFFAA">__name__</text>
-<text x="630" y="440" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.6"> == </text>
-<text x="652" y="440" font-family="'Courier New',monospace" font-size="10" fill="#AAFFBB">"__main__"</text>
-<text x="722" y="440" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">:</text>
-
-<!-- Line 21 -->
-<text x="520" y="456" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">21</text>
-<text x="578" y="456" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">dev = </text>
-<text x="616" y="456" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">Developer</text>
-<text x="670" y="456" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">()</text>
-
-<!-- Line 22 -->
-<text x="520" y="472" font-family="'Courier New',monospace" font-size="9" fill="#0D4020" text-anchor="middle">22</text>
-<text x="578" y="472" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.8">dev.</text>
-<text x="602" y="472" font-family="'Courier New',monospace" font-size="10" fill="#5AFF8A">code</text>
-<text x="626" y="472" font-family="'Courier New',monospace" font-size="10" fill="#1AFF5A" opacity="0.7">()</text>
-
-<!-- Editor status bar -->
-<rect x="514" y="608" width="491" height="16" fill="#010C06"/>
-<line x1="514" y1="608" x2="1005" y2="608" stroke="#1AFF5A" stroke-width="0.4" opacity="0.3"/>
-<text x="520" y="619" font-family="'Courier New',monospace" font-size="7" fill="#0A6020">Python 3.11  |  UTF-8  |  LF  |  Ln 10, Col 24</text>
-<text x="900" y="619" font-family="'Courier New',monospace" font-size="7" fill="#0A6020">&#9679; main</text>
-
-<!-- ================================================================ -->
-<!-- TERMINAL PANEL (bottom of screen) -->
-<!-- ================================================================ -->
-<rect x="394" y="618" width="611" height="100" fill="#010805"/>
-<line x1="394" y1="618" x2="1005" y2="618" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-<text x="404" y="632" font-family="'Courier New',monospace" font-size="8" font-weight="700" fill="#0FAA3A" letter-spacing="1">TERMINAL</text>
-<line x1="394" y1="634" x2="1005" y2="634" stroke="#1AFF5A" stroke-width="0.3" opacity="0.2"/>
-
-<text x="404" y="648" font-family="'Courier New',monospace" font-size="8.5" fill="#0FAA3A">asc@dev-machine:~$ git commit -m "Building the future"</text>
-<text x="404" y="661" font-family="'Courier New',monospace" font-size="8" fill="#0D7030">Enumerating objects: 42, done.</text>
-<text x="404" y="673" font-family="'Courier New',monospace" font-size="8" fill="#0D7030">Counting objects: 100% (42/42), done.</text>
-<text x="404" y="685" font-family="'Courier New',monospace" font-size="8" fill="#0D7030">Compressing objects: 100% (21/21), done.</text>
-<text x="404" y="697" font-family="'Courier New',monospace" font-size="8" fill="#0D7030">Writing objects: 100% (42/42), 3.27 KiB | 1.21 MiB/s, done.</text>
-<text x="404" y="709" font-family="'Courier New',monospace" font-size="8" fill="#0D7030">Total 42 (delta 13), reused 0 (delta 0)</text>
-<text x="404" y="720" font-family="'Courier New',monospace" font-size="8" fill="#0FAA3A">asc@dev-machine:~$ </text>
-<!-- Terminal cursor -->
-<rect x="530" y="710" width="7" height="12" fill="#1AFF5A" style="animation:termCursor 1s step-end infinite"/>
-
-<!-- ================================================================ -->
-<!-- DESK SURFACE -->
-<!-- ================================================================ -->
-<rect x="0" y="740" width="1240" height="240" fill="#020A04"/>
-<rect x="0" y="740" width="1240" height="4" fill="#0A2810" opacity="0.6"/>
-
-<!-- ================================================================ -->
-<!-- KEYBOARD -->
-<!-- ================================================================ -->
-<g transform="translate(310, 770)">
-  <rect x="0" y="0" width="640" height="160" rx="10" fill="#050F07" stroke="#0A2810" stroke-width="1"/>
-  <!-- Key rows -->
-  <!-- Row 1 (function keys) -->
-  <g fill="#030A05" stroke="#0A2A12" stroke-width="0.5">
-    <rect x="10" y="10" width="28" height="18" rx="3"/>
-    <rect x="42" y="10" width="28" height="18" rx="3"/>
-    <rect x="74" y="10" width="28" height="18" rx="3"/>
-    <rect x="106" y="10" width="28" height="18" rx="3"/>
-    <rect x="138" y="10" width="28" height="18" rx="3"/>
-    <rect x="170" y="10" width="28" height="18" rx="3"/>
-    <rect x="202" y="10" width="28" height="18" rx="3"/>
-    <rect x="234" y="10" width="28" height="18" rx="3"/>
-    <rect x="266" y="10" width="28" height="18" rx="3"/>
-    <rect x="298" y="10" width="28" height="18" rx="3"/>
-    <rect x="330" y="10" width="28" height="18" rx="3"/>
-    <rect x="362" y="10" width="28" height="18" rx="3"/>
-    <rect x="394" y="10" width="28" height="18" rx="3"/>
-    <rect x="426" y="10" width="28" height="18" rx="3"/>
-    <rect x="458" y="10" width="28" height="18" rx="3"/>
-    <rect x="490" y="10" width="28" height="18" rx="3"/>
-    <rect x="530" y="10" width="22" height="18" rx="3"/>
-    <rect x="556" y="10" width="22" height="18" rx="3"/>
-    <rect x="582" y="10" width="22" height="18" rx="3"/>
-    <rect x="608" y="10" width="22" height="18" rx="3"/>
+  <!-- Background -->
+  <rect width="1000" height="750" fill="#020502" />
+  
+  <!-- Circuitry Traces (Left) -->
+  <g stroke="#1a5c1a" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M0 200 L50 200 L80 230 L110 230" />
+    <path d="M0 250 L40 250 L70 280 L110 280" />
+    <path d="M0 350 L60 350 L90 320 L110 320" />
+    <path d="M0 450 L30 450 L70 490 L110 490" />
+    <!-- Nodes -->
+    <circle cx="110" cy="230" r="3" fill="#33ff33" class="node-pulse" />
+    <circle cx="110" cy="320" r="3" fill="#33ff33" class="node-pulse" />
   </g>
-  <!-- Row 2 -->
-  <g fill="#030A05" stroke="#0A2A12" stroke-width="0.5">
-    <rect x="10" y="32" width="28" height="20" rx="3"/>
-    <rect x="42" y="32" width="28" height="20" rx="3"/>
-    <rect x="74" y="32" width="28" height="20" rx="3"/>
-    <rect x="106" y="32" width="28" height="20" rx="3"/>
-    <rect x="138" y="32" width="28" height="20" rx="3"/>
-    <rect x="170" y="32" width="28" height="20" rx="3"/>
-    <rect x="202" y="32" width="28" height="20" rx="3"/>
-    <rect x="234" y="32" width="28" height="20" rx="3"/>
-    <rect x="266" y="32" width="28" height="20" rx="3"/>
-    <rect x="298" y="32" width="28" height="20" rx="3"/>
-    <rect x="330" y="32" width="28" height="20" rx="3"/>
-    <rect x="362" y="32" width="28" height="20" rx="3"/>
-    <rect x="394" y="32" width="28" height="20" rx="3"/>
-    <rect x="426" y="32" width="48" height="20" rx="3"/>
+
+  <!-- Circuitry Traces (Right) -->
+  <g stroke="#1a5c1a" stroke-width="1.5" fill="none" opacity="0.6" transform="scale(-1, 1) translate(-1000, 0)">
+    <path d="M0 220 L60 220 L90 250 L110 250" />
+    <path d="M0 300 L40 300 L70 270 L110 270" />
+    <path d="M0 400 L50 400 L80 430 L110 430" />
+    <circle cx="110" cy="250" r="3" fill="#33ff33" class="node-pulse" />
+    <circle cx="110" cy="430" r="3" fill="#33ff33" class="node-pulse" />
   </g>
-  <!-- Glowing keys -->
-  <g fill="#0A2810" stroke="#1AFF5A" stroke-width="0.4" opacity="0.5">
-    <rect x="10" y="54" width="40" height="20" rx="3"/>
-    <rect x="54" y="54" width="28" height="20" rx="3"/>
-    <rect x="86" y="54" width="28" height="20" rx="3"/>
-    <rect x="118" y="54" width="28" height="20" rx="3"/>
-    <rect x="150" y="54" width="28" height="20" rx="3"/>
-    <rect x="182" y="54" width="28" height="20" rx="3"/>
-    <rect x="214" y="54" width="28" height="20" rx="3"/>
-    <rect x="246" y="54" width="28" height="20" rx="3"/>
-    <rect x="278" y="54" width="28" height="20" rx="3"/>
-    <rect x="310" y="54" width="28" height="20" rx="3"/>
-    <rect x="342" y="54" width="28" height="20" rx="3"/>
-    <rect x="374" y="54" width="28" height="20" rx="3"/>
-    <rect x="406" y="54" width="28" height="20" rx="3"/>
-    <rect x="438" y="54" width="36" height="20" rx="3"/>
+
+  <!-- Main Terminal Frame -->
+  <rect x="120" y="80" width="760" height="520" rx="10" fill="#050a05" stroke="#1a5c1a" stroke-width="2" filter="url(#glow)" />
+  
+  <!-- Terminal Header -->
+  <text x="145" y="115" class="mono code-green" font-size="16" letter-spacing="2">DEV-TERMINAL</text>
+  <g transform="translate(800, 105)">
+    <circle cx="0" cy="0" r="5" fill="#1a5c1a" />
+    <circle cx="20" cy="0" r="5" fill="#1a5c1a" />
+    <circle cx="40" cy="0" r="5" fill="#1a5c1a" />
   </g>
-  <!-- Row 4 (home row) -->
-  <g fill="#0A2010" stroke="#1AFF5A" stroke-width="0.4" opacity="0.6">
-    <rect x="10" y="78" width="46" height="20" rx="3"/>
-    <rect x="60" y="78" width="28" height="20" rx="3"/>
-    <rect x="92" y="78" width="28" height="20" rx="3"/>
-    <rect x="124" y="78" width="28" height="20" rx="3"/>
-    <rect x="156" y="78" width="28" height="20" rx="3"/>
-    <rect x="188" y="78" width="28" height="20" rx="3"/>
-    <rect x="220" y="78" width="28" height="20" rx="3"/>
-    <rect x="252" y="78" width="28" height="20" rx="3"/>
-    <rect x="284" y="78" width="28" height="20" rx="3"/>
-    <rect x="316" y="78" width="28" height="20" rx="3"/>
-    <rect x="348" y="78" width="28" height="20" rx="3"/>
-    <rect x="380" y="78" width="28" height="20" rx="3"/>
-    <rect x="412" y="78" width="62" height="20" rx="3"/>
+  <line x1="120" y1="135" x2="880" y2="135" stroke="#1a5c1a" stroke-width="1" />
+
+  <!-- Code Area: Line Numbers -->
+  <g font-size="18" class="mono dim-green" text-anchor="end">
+    <text x="175" y="210">01</text>
+    <text x="175" y="270">02</text>
+    <text x="175" y="330">03</text>
+    <text x="175" y="390">04</text>
+    <text x="175" y="450">05</text>
+    <text x="175" y="500">06</text>
+    <text x="175" y="550">07</text>
   </g>
-  <!-- Space bar row -->
-  <g fill="#0A2010" stroke="#1AFF5A" stroke-width="0.4" opacity="0.7">
-    <rect x="10" y="102" width="54" height="20" rx="3"/>
-    <rect x="68" y="102" width="36" height="20" rx="3"/>
-    <rect x="108" y="102" width="36" height="20" rx="3"/>
-    <rect x="148" y="102" width="240" height="20" rx="3"/>
-    <rect x="392" y="102" width="36" height="20" rx="3"/>
-    <rect x="432" y="102" width="36" height="20" rx="3"/>
-    <rect x="472" y="102" width="24" height="20" rx="3"/>
-    <rect x="500" y="102" width="24" height="20" rx="3"/>
-    <rect x="528" y="102" width="24" height="20" rx="3"/>
+
+  <!-- Code Area: Content -->
+  <g font-size="34" class="mono code-green" filter="url(#glow)">
+    <text x="220" y="210">while (learning) {</text>
+    <text x="280" y="270">build();</text>
+    <text x="280" y="330">improve();</text>
+    <text x="280" y="390">repeat();</text>
+    <text x="220" y="450">}</text>
+    <!-- Blinking Cursor -->
+    <rect x="255" y="420" width="18" height="35" class="cursor" />
   </g>
-  <!-- Key glows scattered -->
-  <g fill="#1AFF5A" opacity="0.15">
-    <rect x="86" y="54" width="28" height="20" rx="3"/>
-    <rect x="182" y="54" width="28" height="20" rx="3"/>
-    <rect x="310" y="54" width="28" height="20" rx="3"/>
-    <rect x="124" y="78" width="28" height="20" rx="3"/>
-    <rect x="252" y="78" width="28" height="20" rx="3"/>
-    <rect x="380" y="78" width="28" height="20" rx="3"/>
-    <rect x="148" y="102" width="240" height="20" rx="3"/>
+
+  <!-- Right Metadata Panel -->
+  <line x1="720" y1="180" x2="720" y2="520" stroke="#1a5c1a" stroke-width="1" />
+  <g x="740" font-size="12" class="mono dim-green" letter-spacing="1">
+    <text x="740" y="195">// LANG: JAVA</text>
+    <text x="740" y="220">// MODE: FOCUS</text>
+    <text x="740" y="245">// STATUS: ACTIVE</text>
+    <text x="740" y="270">// COMMIT: DAILY</text>
+    <text x="740" y="295">// VERSION: 2.0.1</text>
   </g>
-  <!-- Key labels (select keys) -->
-  <g font-family="'Courier New',monospace" font-size="6" fill="#1AFF5A" opacity="0.6">
-    <text x="67" y="68">Q</text>
-    <text x="99" y="68">W</text>
-    <text x="131" y="68">E</text>
-    <text x="163" y="68">R</text>
-    <text x="195" y="68">T</text>
-    <text x="227" y="68">Y</text>
-    <text x="259" y="68">U</text>
-    <text x="291" y="68">I</text>
-    <text x="323" y="68">O</text>
-    <text x="355" y="68">P</text>
-    <text x="73" y="92">A</text>
-    <text x="105" y="92">S</text>
-    <text x="137" y="92">D</text>
-    <text x="169" y="92">F</text>
-    <text x="201" y="92">G</text>
-    <text x="233" y="92">H</text>
-    <text x="265" y="92">J</text>
-    <text x="297" y="92">K</text>
-    <text x="329" y="92">L</text>
+
+  <!-- Java Logo (Stylized) -->
+  <g transform="translate(750, 400) scale(1.2)" filter="url(#glow)">
+    <path d="M15 15 Q 10 0, 25 0 Q 30 10, 20 15" fill="none" stroke="#33ff33" stroke-width="2" />
+    <path d="M5 25 Q 25 15, 45 25 Q 25 35, 5 25 Z" fill="#33ff33" opacity="0.3" stroke="#33ff33" stroke-width="1"/>
+    <text x="5" y="50" class="mono code-green" font-size="14" font-weight="bold">Java</text>
   </g>
-  <!-- Touchpad -->
-  <rect x="240" y="128" width="160" height="22" rx="4" fill="#030A05" stroke="#0A2A12" stroke-width="0.5"/>
-  <line x1="320" y1="128" x2="320" y2="150" stroke="#0A2810" stroke-width="0.5" opacity="0.5"/>
-</g>
 
-<!-- ================================================================ -->
-<!-- COFFEE MUG -->
-<!-- ================================================================ -->
-<g transform="translate(250,670)">
-  <!-- Mug body -->
-  <rect x="0" y="30" width="80" height="90" rx="5" fill="#040C06" stroke="#0A2810" stroke-width="1"/>
-  <rect x="5" y="35" width="70" height="80" rx="3" fill="#030A04"/>
-  <!-- Mug handle -->
-  <path d="M80,55 Q110,55 110,85 Q110,115 80,115" fill="none" stroke="#0A2810" stroke-width="6" stroke-linecap="round"/>
-  <!-- </> symbol on mug -->
-  <text x="18" y="88" font-family="'Courier New',monospace" font-size="20" font-weight="700" fill="#1AFF5A" opacity="0.7">&lt;/&gt;</text>
-  <!-- Steam -->
-  <g opacity="0.35" fill="none" stroke="#1AFF5A" stroke-width="1.5" stroke-linecap="round">
-    <path d="M25,28 Q28,18 22,8 Q18,-2 22,-12" style="animation:steamRise1 3s ease-in-out infinite"/>
-    <path d="M40,28 Q44,16 38,6 Q34,-4 39,-14" style="animation:steamRise2 3.5s ease-in-out infinite 0.5s"/>
-    <path d="M55,28 Q58,18 53,8 Q49,-2 53,-12" style="animation:steamRise1 4s ease-in-out infinite 1s"/>
+  <!-- Bottom HUD Panel -->
+  <rect x="120" y="620" width="760" height="80" rx="10" fill="#050a05" stroke="#1a5c1a" stroke-width="2" />
+  
+  <!-- Bottom HUD Content -->
+  <g transform="translate(140, 645)">
+    <!-- Section: System -->
+    <rect x="0" y="0" width="30" height="30" stroke="#33ff33" fill="none" />
+    <rect x="5" y="5" width="20" height="20" fill="#33ff33" opacity="0.4" />
+    <text x="60" y="10" class="mono dim-green" font-size="12">SYSTEM STATUS</text>
+    <text x="60" y="30" class="mono code-green" font-size="16">ONLINE</text>
+
+    <!-- Section: Uptime -->
+    <line x1="180" y1="-10" x2="180" y2="40" stroke="#1a5c1a" />
+    <text x="200" y="10" class="mono dim-green" font-size="12">UPTIME</text>
+    <text x="200" y="30" class="mono code-green" font-size="16">99.99%</text>
+
+    <!-- Section: Mode -->
+    <line x1="330" y1="-10" x2="330" y2="40" stroke="#1a5c1a" />
+    <text x="350" y="10" class="mono dim-green" font-size="12">BUILD MODE</text>
+    <text x="350" y="30" class="mono code-green" font-size="16">ACTIVE</text>
+
+    <!-- Section: Focus Bar -->
+    <line x1="500" y1="-10" x2="500" y2="40" stroke="#1a5c1a" />
+    <text x="520" y="10" class="mono dim-green" font-size="12">FOCUS LEVEL</text>
+    <g transform="translate(520, 20)">
+      <rect x="0" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="20" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="40" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="60" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="80" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="100" y="0" width="15" height="15" fill="#33ff33" />
+      <rect x="120" y="0" width="15" height="15" stroke="#1a5c1a" fill="none" />
+      <rect x="140" y="0" width="15" height="15" stroke="#1a5c1a" fill="none" />
+      <rect x="160" y="0" width="15" height="15" stroke="#1a5c1a" fill="none" />
+    </g>
   </g>
-  <!-- Mug base -->
-  <rect x="-5" y="118" width="90" height="8" rx="4" fill="#030A04" stroke="#0A2810" stroke-width="0.8"/>
-</g>
 
-<!-- ================================================================ -->
-<!-- DIGITAL CLOCK -->
-<!-- ================================================================ -->
-<g transform="translate(1020, 730)">
-  <rect x="0" y="0" width="170" height="80" rx="6" fill="#020A05" stroke="#1AFF5A" stroke-width="0.8" opacity="0.8"/>
-  <rect x="0" y="0" width="170" height="80" rx="6" fill="none" stroke="#1AFF5A" stroke-width="0.3" opacity="0.3" style="animation:pulse 2s ease-in-out infinite"/>
-  <!-- Clock digits -->
-  <text x="85" y="50" font-family="'Courier New', monospace" font-size="32" font-weight="700" fill="#1AFF5A" text-anchor="middle" letter-spacing="2" filter="url(#glow)">10:24:30</text>
-  <text x="148" y="38" font-family="'Courier New',monospace" font-size="7" fill="#0FAA3A">PM</text>
-  <text x="85" y="68" font-family="'Courier New',monospace" font-size="9" fill="#0FAA3A" text-anchor="middle" letter-spacing="2">FOCUS MODE</text>
-  <!-- Corner accents -->
-  <line x1="0" y1="15" x2="12" y2="15" stroke="#1AFF5A" stroke-width="1" opacity="0.6"/>
-  <line x1="158" y1="15" x2="170" y2="15" stroke="#1AFF5A" stroke-width="1" opacity="0.6"/>
-  <line x1="0" y1="65" x2="12" y2="65" stroke="#1AFF5A" stroke-width="1" opacity="0.6"/>
-  <line x1="158" y1="65" x2="170" y2="65" stroke="#1AFF5A" stroke-width="1" opacity="0.6"/>
-</g>
+  <!-- HUD Corner Accents -->
+  <g stroke="#33ff33" stroke-width="3" fill="none" filter="url(#glow)">
+    <path d="M100 50 L50 50 L50 100" />
+    <path d="M900 50 L950 50 L950 100" />
+    <path d="M100 700 L50 700 L50 650" />
+    <path d="M900 700 L950 700 L950 650" />
+  </g>
 
-<!-- ================================================================ -->
-<!-- MOUSE -->
-<!-- ================================================================ -->
-<g transform="translate(1060, 820)">
-  <ellipse cx="55" cy="60" rx="40" ry="55" fill="#040C06" stroke="#0A2810" stroke-width="1"/>
-  <ellipse cx="55" cy="60" rx="36" ry="50" fill="#030A05"/>
-  <!-- Mouse buttons -->
-  <line x1="55" y1="15" x2="55" y2="75" stroke="#0A2810" stroke-width="1" opacity="0.6"/>
-  <!-- Scroll wheel -->
-  <rect x="48" y="28" width="14" height="22" rx="5" fill="#0A2010" stroke="#1AFF5A" stroke-width="0.5" opacity="0.6"/>
-  <!-- Code symbol on mouse -->
-  <text x="55" y="85" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="#1AFF5A" text-anchor="middle" opacity="0.6">&lt;/&gt;</text>
-  <!-- Mouse glow -->
-  <ellipse cx="55" cy="60" rx="40" ry="55" fill="none" stroke="#1AFF5A" stroke-width="0.3" opacity="0.3" style="animation:pulse 3s ease-in-out infinite"/>
-</g>
-
-<!-- ================================================================ -->
-<!-- BOTTOM STATS BAR -->
-<!-- ================================================================ -->
-<rect x="0" y="900" width="1240" height="80" fill="#010804"/>
-<line x1="0" y1="900" x2="1240" y2="900" stroke="#1AFF5A" stroke-width="0.5" opacity="0.3"/>
-
-<!-- Stats panels -->
-<!-- Lines of Code -->
-<rect x="10" y="910" width="230" height="60" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.6" opacity="0.9"/>
-<text x="22" y="928" font-family="'Courier New',monospace" font-size="8" fill="#0A6020" letter-spacing="1">LINES OF CODE</text>
-<text x="22" y="950" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1AFF5A">14.2K</text>
-<!-- Sparkline -->
-<g transform="translate(100,935)" fill="none" stroke="#1AFF5A" stroke-width="1" opacity="0.5">
-  <polyline points="0,18 12,14 24,16 36,10 48,12 60,8 72,11 84,6 96,9 108,4 120,7"/>
-</g>
-
-<!-- Commits -->
-<rect x="255" y="910" width="230" height="60" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.6" opacity="0.9"/>
-<text x="267" y="928" font-family="'Courier New',monospace" font-size="8" fill="#0A6020" letter-spacing="1">COMMITS</text>
-<text x="267" y="950" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1AFF5A">198</text>
-<!-- Bar chart commits -->
-<g transform="translate(320,925)" fill="#1AFF5A" opacity="0.6">
-  <rect x="0" y="20" width="8" height="14" rx="1"/>
-  <rect x="11" y="14" width="8" height="20" rx="1"/>
-  <rect x="22" y="18" width="8" height="16" rx="1"/>
-  <rect x="33" y="10" width="8" height="24" rx="1"/>
-  <rect x="44" y="16" width="8" height="18" rx="1"/>
-  <rect x="55" y="8" width="8" height="26" rx="1"/>
-  <rect x="66" y="12" width="8" height="22" rx="1"/>
-  <rect x="77" y="6" width="8" height="28" rx="1"/>
-  <rect x="88" y="14" width="8" height="20" rx="1"/>
-  <rect x="99" y="10" width="8" height="24" rx="1"/>
-  <rect x="110" y="4" width="8" height="30" rx="1" style="animation:barAnimate 2s ease-in-out infinite"/>
-  <rect x="121" y="8" width="8" height="26" rx="1" style="animation:barAnimate 2.5s ease-in-out infinite 0.3s"/>
-</g>
-
-<!-- Streak -->
-<rect x="500" y="910" width="230" height="60" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.6" opacity="0.9"/>
-<text x="512" y="928" font-family="'Courier New',monospace" font-size="8" fill="#0A6020" letter-spacing="1">STREAK</text>
-<text x="512" y="950" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1AFF5A">27</text>
-<!-- Flame icon -->
-<g transform="translate(556,922)">
-  <path d="M15,40 Q5,30 8,15 Q10,5 18,0 Q14,10 18,18 Q22,8 28,2 Q24,15 30,22 Q34,10 32,0 Q42,12 38,28 Q35,40 25,44 Q35,36 32,25 Q22,38 15,40Z" fill="#1AFF5A" opacity="0.8" style="animation:pulse 1.5s ease-in-out infinite"/>
-</g>
-
-<!-- Contributions -->
-<rect x="745" y="910" width="230" height="60" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.6" opacity="0.9"/>
-<text x="757" y="928" font-family="'Courier New',monospace" font-size="8" fill="#0A6020" letter-spacing="1">CONTRIBUTIONS</text>
-<text x="757" y="950" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1AFF5A">421</text>
-<!-- Contribution bars -->
-<g transform="translate(820,925)" fill="#1AFF5A" opacity="0.55">
-  <rect x="0" y="22" width="8" height="12" rx="1"/>
-  <rect x="11" y="16" width="8" height="18" rx="1"/>
-  <rect x="22" y="20" width="8" height="14" rx="1"/>
-  <rect x="33" y="12" width="8" height="22" rx="1"/>
-  <rect x="44" y="18" width="8" height="16" rx="1"/>
-  <rect x="55" y="8" width="8" height="26" rx="1"/>
-  <rect x="66" y="14" width="8" height="20" rx="1"/>
-  <rect x="77" y="4" width="8" height="30" rx="1" style="animation:barAnimate 2.2s ease-in-out infinite"/>
-  <rect x="88" y="10" width="8" height="24" rx="1"/>
-  <rect x="99" y="16" width="8" height="18" rx="1"/>
-  <rect x="110" y="6" width="8" height="28" rx="1" style="animation:barAnimate 3s ease-in-out infinite 0.5s"/>
-  <rect x="121" y="12" width="8" height="22" rx="1"/>
-</g>
-
-<!-- Languages -->
-<rect x="990" y="910" width="240" height="60" rx="4" fill="url(#panelBg)" stroke="#1A5030" stroke-width="0.6" opacity="0.9"/>
-<text x="1002" y="928" font-family="'Courier New',monospace" font-size="8" fill="#0A6020" letter-spacing="1">LANGUAGES</text>
-<!-- Language bars -->
-<text x="1002" y="942" font-family="'Courier New',monospace" font-size="8" fill="#0A6020">Java</text>
-<rect x="1064" y="934" width="140" height="6" rx="2" fill="#0A1A10"/>
-<rect x="1064" y="934" width="63" height="6" rx="2" fill="url(#barGreen)" opacity="0.8"/>
-<text x="1218" y="941" font-family="'Courier New',monospace" font-size="8" fill="#1AFF5A">45%</text>
-
-<text x="1002" y="953" font-family="'Courier New',monospace" font-size="8" fill="#0A6020">Python</text>
-<rect x="1064" y="946" width="140" height="5" rx="2" fill="#0A1A10"/>
-<rect x="1064" y="946" width="49" height="5" rx="2" fill="url(#barGreen)" opacity="0.7"/>
-<text x="1218" y="952" font-family="'Courier New',monospace" font-size="8" fill="#1AFF5A">35%</text>
-
-<text x="1002" y="963" font-family="'Courier New',monospace" font-size="8" fill="#0A6020">TypeScript</text>
-<rect x="1064" y="957" width="140" height="4" rx="2" fill="#0A1A10"/>
-<rect x="1064" y="957" width="21" height="4" rx="2" fill="url(#barGreen)" opacity="0.6"/>
-<text x="1218" y="963" font-family="'Courier New',monospace" font-size="8" fill="#1AFF5A">15%</text>
-
-<!-- ================================================================ -->
-<!-- FLOATING PARTICLES -->
-<!-- ================================================================ -->
-<circle cx="320" cy="180" r="1.5" fill="#1AFF5A" opacity="0.4" style="animation:pulse 4s ease-in-out infinite 0.5s"/>
-<circle cx="355" cy="310" r="1.2" fill="#1AFF5A" opacity="0.3" style="animation:pulse 3s ease-in-out infinite 1.2s"/>
-<circle cx="375" cy="440" r="1.5" fill="#1AFF5A" opacity="0.35" style="animation:pulse 5s ease-in-out infinite 0.8s"/>
-<circle cx="350" cy="560" r="1" fill="#1AFF5A" opacity="0.3" style="animation:pulse 3.5s ease-in-out infinite 2s"/>
-<circle cx="1090" cy="200" r="1.5" fill="#1AFF5A" opacity="0.4" style="animation:pulse 4.5s ease-in-out infinite 0.3s"/>
-<circle cx="1150" cy="400" r="1.2" fill="#1AFF5A" opacity="0.35" style="animation:pulse 3.8s ease-in-out infinite 1.5s"/>
-<circle cx="1190" cy="600" r="1.5" fill="#1AFF5A" opacity="0.3" style="animation:pulse 4.2s ease-in-out infinite 0.7s"/>
-
-<!-- Top border glow dots -->
-<circle cx="400" cy="10" r="1.5" fill="#1AFF5A" opacity="0.3" style="animation:pulse 3s ease-in-out infinite"/>
-<circle cx="620" cy="10" r="1.5" fill="#1AFF5A" opacity="0.25" style="animation:pulse 4s ease-in-out infinite 0.5s"/>
-<circle cx="840" cy="10" r="1.5" fill="#1AFF5A" opacity="0.3" style="animation:pulse 3.5s ease-in-out infinite 1s"/>
-
-<!-- Outer border decoration -->
-<rect x="2" y="2" width="1236" height="976" rx="4" fill="none" stroke="#0A2A12" stroke-width="1" opacity="0.6"/>
-<rect x="5" y="5" width="1230" height="970" rx="3" fill="none" stroke="#1AFF5A" stroke-width="0.3" opacity="0.15"/>
-</g>
+  <!-- Scanline Overlay -->
+  <rect width="1000" height="750" fill="url(#scanlines)" pointer-events="none" />
 </svg>
