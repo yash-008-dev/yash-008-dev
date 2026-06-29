@@ -62,3 +62,8 @@
 <a href="https:/github.com/asc006-git"><img src="https://img.shields.io/badge/GitHub-CAFF3C?style=for-the-badge&logo=github&logoColor=000000&labelColor=060D08" alt="github" /></a>
 <a href="https://leetcode.com/u/asc_006/"><img src="https://img.shields.io/badge/LeetCode-CAFF3C?style=for-the-badge&logo=leetcode&logoColor=000000&labelColor=060D08" alt="leetcode" /></a>
 <a href="https://www.geeksforgeeks.org/user/Ajkolaganti/"><img src="https://img.shields.io/badge/GeeksforGeeks-CAFF3C?style=for-the-badge&logo=geeksforgeeks&logoColor=000000&labelColor=060D08" alt="gfg" /></a>
+
+---
+<p align="center">
+  <img src="./assets/footer.svg" width="100%" alt="Banner"/>
+</p>
