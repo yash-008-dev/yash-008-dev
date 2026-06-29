@@ -38,18 +38,6 @@
 
 ---
 
-<p align="center">
-    <img src="./assets/github-telemetry.svg" width="100%" alt="Repository Telemetry"/>
-</p>
-
----
----
-
-<p align="center">
-    <img src="./assets/highlights.svg" width="100%" alt="Highlights"/>
-</p>
-
----
 ## GitHub Activity
 
 <div align="center">
