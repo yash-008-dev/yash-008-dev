@@ -34,17 +34,6 @@
         width: 0;
         animation: typing 0.8s steps(25, end) forwards;
       }
-
-      /* Delays to type out each line cleanly in sequence */
-      .line-1 { animation-delay: 0.5s; }
-      .line-2 { animation-delay: 1.5s; }
-      .line-3 { animation-delay: 2.5s; }
-      .line-4 { animation-delay: 3.5s; }
-      .line-5 { animation-delay: 4.5s; }
-      .line-6 { animation-delay: 5.5s; }
-      .line-7 { animation-delay: 6.5s; }
-      .line-8 { animation-delay: 7.5s; }
-      .line-9 { animation-delay: 8.5s; }
       
       /* Animates the cursor's coordinates to track along with the typing flow */
       @keyframes cursorControl {
