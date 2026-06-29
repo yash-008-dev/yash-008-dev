@@ -29,7 +29,7 @@
 
 <td width="42%" align="right">
 
-<img src="./assets/dev-workspace.svg"
+<img src="./assets/dev-worksapce.svg"
      width="360"
      style="transform: rotate(-6deg);" />
 
@@ -65,7 +65,7 @@
 
 ---
 
-## 📈 Contribution Activity
+## Contribution Activity
 
 <p align="center">
 
@@ -75,7 +75,7 @@
 
 ---
 
-## 📌 Pinned Projects
+## Pinned Projects
 
 <table>
 <tr>
