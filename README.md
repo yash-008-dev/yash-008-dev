@@ -30,7 +30,7 @@ Right now I'm going deeper into AI/ML — model evaluation, agentic systems, and
   <img src="https://img.shields.io/badge/LeetCode-CAFF3C?style=for-the-badge&logo=leetcode&logoColor=000000&labelColor=060D08" alt="leetcode" />
 </a>
 <p style="margin-top: 5px; margin-bottom: 15px; font-family: sans-serif; color: #CAFF3C;">
-  <strong>Rating:</strong> 1765 
+  <strong>  Rating:</strong> 1765 
 </p>
 
 <a href="https://codeforces.com/profile/Adhyatma_27" target="_blank">
