@@ -57,11 +57,11 @@
 <text x="375" y="67" class="ftMethod">repeat</text><text x="415" y="67" class="ftCode">();</text>
 
 <text x="165" y="82" class="ftLineNo">3</text>
-<text x="185" y="82" class="ftCode">}// Currently exploring agentic AI and model evaluation,</text>
+<text x="185" y="82" class="ftCode">}// Currently exploring agentic AI and model evaluation, and looking to </text>
 
 <text x="165" y="100" class="ftLineNo">4</text>
-<text x="185" y="100" class="ftComment">//And looking to contribute more to open source. Always up for a CP problem or an AI/ML discussion.✦</text>
-<rect x="465" y="90" width="7" height="14" fill="#7CFF5E" fill-opacity="0.7" class="ftCursor"/>
+<text x="185" y="100" class="ftComment">//contribute more to open source. Always up for a CP problem or an AI/ML discussion.✦</text>
+<rect x="465" y="90" width="7" height="14" fill="#3A5E48" fill-opacity="0.7" class="ftCursor"/>
 
 <!-- Footer Status -->
 <text x="425" y="132" font-family="'SFMono-Regular',Consolas,monospace" font-size="8" fill="#2A4035" text-anchor="middle">PROCESS_EXIT: 0 // SESSION_TERMINATED_GRACEFULLY // BUILT_WITH_☕_AND_PASSION</text>
