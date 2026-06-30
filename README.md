@@ -20,7 +20,7 @@
 
 <td width="42%" align="right">
 
-<img src="./assets/dev-workspace.svg"
+<img src="./assets/dev-worksapce.svg"
      width="360"
      style="transform: rotate(-6deg);" />
 
@@ -32,7 +32,7 @@
 ---
 
 <p align="center">
-    <img src="./assests/engineering-toolkit.svg" width="100%" alt="Engineering Toolkit"/>
+    <img src="./assets/engineering-toolkit.svg" width="100%" alt="Engineering Toolkit"/>
 </p>
 
 ---
