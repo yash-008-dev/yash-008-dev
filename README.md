@@ -7,14 +7,13 @@
 
 <td width="58%" valign="top">
 
-<h2>About Me</h2>
+### About Me
 
-<ul>
-<li>Building AI-powered software that solves real-world security challenges.</li>
-<li>Passionate about Intelligent Systems, Backend Engineering, and Machine Learning.</li>
-<li>Open Source contributor who enjoys transforming ideas into production-ready products.</li>
-<li>Always exploring better architectures, cleaner code, and scalable solutions.</li>
-</ul>
+I am currently sharpening problem-solving through competitive programming in Java on LeetCode and Codeforces, and building projects with Python and web technologies — mostly AI/ML systems that handle real-time, real-world problems.
+
+My projects span behavioral cybersecurity (AutoShield-Edge), talent intelligence (Aptiv), hallucination detection (HalluciGuard), and voice fraud detection (VoiceShield-AI) — different domains, same approach: take a messy real-world signal and build a system that reasons about it correctly.
+
+Right now I'm going deeper into AI/ML — model evaluation, agentic systems, and explainability — and contributing to open source where I can.
 
 </td>
 
@@ -30,6 +29,7 @@
 </table>
 
 ---
+**Daily driver:** Java for DSA and competitive programming · Python for AI/ML and backend systems ·  TypeScript, and JS for specific projects.
 
 <p align="center">
     <img src="./assets/engineering-toolkit.svg" width="100%" alt="Engineering Toolkit"/>
