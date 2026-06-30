@@ -1,12 +1,11 @@
 <p align="center">
-  <img src="./assets/banner.svg" width="100%" alt="Banner"/>
+  <img src="./assets/banner.svg" width="100%" alt="Adhyatma Singh Chauhan"/>
 </p>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3500&pause=1000&color=7CFF5E&center=true&vCenter=true&width=700&lines=Java+Developer;AI+%26+Full+Stack+Developer;Building+Intelligent+Software;Open+Source+Contributor;Always+Learning" />
-</p>
+<table>
+<tr>
 
----
+<td width="58%" valign="top">
 
 <h2>About Me</h2>
 
@@ -21,7 +20,7 @@
 
 <td width="42%" align="right">
 
-<img src="./assets/dev-worksapce.svg"
+<img src="./assets/dev-workspace.svg"
      width="360"
      style="transform: rotate(-6deg);" />
 
@@ -33,16 +32,13 @@
 ---
 
 <p align="center">
-    <img src="./assets/engineering-toolkit.svg" width="100%" alt="Engineering Toolkit"/>
+    <img src="./assests/engineering-toolkit.svg" width="100%" alt="Engineering Toolkit"/>
 </p>
 
 ---
-
-## GitHub Activity
+## Developer Analytics
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=asc006-git&show_icons=true&count_private=true&hide_border=true&title_color=CAFF3C&icon_color=8AFF57&text_color=E8F5E1&bg_color=0A0F08" alt="stats" />
-  &nbsp;&nbsp;
   <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=asc006-git&hide_border=true&background=0A0F08&stroke=CAFF3C&ring=8AFF57&fire=39FF14&currStreakLabel=CAFF3C&sideLabels=8AFF57&dates=8AFF57&currStreakNum=CAFF3C&sideNums=CAFF3C" alt="streak" />
 </p>
 
@@ -51,6 +47,7 @@
 </p>
 
 ---
+## Let's Connect
 
 <p align="center">
   <a href="https://www.linkedin.com/in/adhyatma006" target="_blank">
