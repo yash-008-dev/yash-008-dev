@@ -4,7 +4,8 @@ Local test without any network:  python scripts/stats.py --mock
 """
 import os, sys, json, random, datetime as dt, urllib.request
 
-GH_USER, LC_USER, CF_USER = "asc006-git", "asc_006", "Adhyatma_27"
+GH_USER = os.environ.get("GH_USER", "asc006-git")   # the workflow passes the repo owner automatically
+LC_USER, CF_USER = "asc_006", "Adhyatma_27"
 START_YEAR = 2025                      # first year to count contributions from
 OUT, CACHE = "analytics.svg", ".stats-cache.json"
 G, G2, BG = "#CAFF3C", "#8AFF57", "#060D08"
@@ -20,7 +21,9 @@ def http(url, data=None, headers=None):
 
 # ---------------------------------------------------------------- fetchers
 def fetch_github(today):
-    token = os.environ["GH_TOKEN"]
+    token = os.environ.get("GH_TOKEN")
+    if not token:
+        sys.exit("GH_TOKEN is empty: add a repo secret named STATS_TOKEN (Settings > Secrets and variables > Actions)")
     q = """query($u:String!,$f:DateTime!,$t:DateTime!){user(login:$u){
     contributionsCollection(from:$f,to:$t){contributionCalendar{
     weeks{contributionDays{date contributionCount}}}}}}"""
