@@ -60,13 +60,8 @@ Right now I'm going deeper into AI/ML — model evaluation, agentic systems, and
 ## Developer Analytics
 
 <p align="center">
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=asc006-git&hide_border=true&background=0A0F08&stroke=CAFF3C&ring=8AFF57&fire=39FF14&currStreakLabel=CAFF3C&sideLabels=8AFF57&dates=8AFF57&currStreakNum=CAFF3C&sideNums=CAFF3C" alt="streak" />
+  <img src="./analytics.svg" width="100%" alt="Developer Analytics"/>
 </p>
-
-<p align="center">
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=asc006-git&custom_title=Contribution%20Activity&bg_color=040506&color=7CFF5E&line=00FF88&point=C8FFA0&area=true&hide_border=true"/>
-</p>
-
 ---
 ## Let's Connect
 
