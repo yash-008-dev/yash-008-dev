@@ -14,10 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Build analytics.svg
         run: python scripts/stats.py
         env:
           GH_TOKEN: ${{ secrets.STATS_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
 
       - name: Commit if changed
         run: |
