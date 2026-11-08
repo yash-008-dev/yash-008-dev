@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" role="img" aria-label="Developer Analytics">
+<defs>
+<filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CAFF3C" stop-opacity="0"/><stop offset=".5" stop-color="#CAFF3C" stop-opacity=".14"/><stop offset="1" stop-color="#CAFF3C" stop-opacity="0"/></linearGradient>
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#CAFF3C" stroke-opacity=".05"/></pattern>
+<clipPath id="clip"><rect width="1000" height="400" rx="10"/></clipPath>
+</defs>
+<style>
+text{font-family:"Courier New",Courier,monospace}
+.pan{animation:pan 4s ease-in-out infinite}
+.dot,.cur{animation:blink 1.2s steps(2,end) infinite}
+.flow{stroke-dasharray:6 10;animation:flow 1.4s linear infinite}
+.title{animation:flick 6s linear infinite}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 5s linear infinite}
+.grow{transform-box:fill-box;transform-origin:50% 100%;animation:grow 3s ease-in-out infinite}
+.tw{animation:tw 3s ease-in-out infinite}
+@keyframes pan{0%,100%{stroke-opacity:.5}50%{stroke-opacity:1}}
+@keyframes blink{0%{opacity:1}50%{opacity:0}}
+@keyframes flow{to{stroke-dashoffset:-32}}
+@keyframes flick{0%,92%,100%{opacity:1}93%{opacity:.55}94%{opacity:1}96%{opacity:.7}97%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes grow{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(1)}}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+<g clip-path="url(#clip)">
+<rect width="1000" height="400" fill="#060D08"/><rect width="1000" height="400" fill="url(#grid)"/>
+<rect x="1.5" y="1.5" width="997" height="397" rx="9" fill="none" stroke="#CAFF3C" stroke-opacity=".6" stroke-width="2" class="pan"/>
+<path d="M40 52H300M700 52H960" stroke="#CAFF3C" stroke-opacity=".5" fill="none" class="flow"/>
+<text x="500.0" y="62" text-anchor="middle" font-size="34" font-weight="bold" letter-spacing="4" fill="#CAFF3C" class="title" filter="url(#glow)">DEVELOPER ANALYTICS</text>
+<text x="500.0" y="86" text-anchor="middle" font-size="12" fill="#8AFF57" fill-opacity=".8">LIVE FEED // GITHUB · LEETCODE · CODEFORCES<tspan class="cur">_</tspan></text>
+<rect x="27" y="104" width="300" height="222" rx="8" fill="#CAFF3C" fill-opacity=".03" stroke="#CAFF3C" stroke-width="1.5" class="pan" style="animation-delay:0.0s"/>
+<text x="41" y="128" font-size="12" fill="#CAFF3C">01 // GITHUB</text>
+<circle cx="311" cy="124" r="3" fill="#8AFF57" class="dot" style="animation-delay:0.0s"/>
+<circle cx="89" cy="196" r="38" fill="none" stroke="#8AFF57" stroke-opacity=".25" stroke-width="5"/>
+<circle cx="89" cy="196" r="38" fill="none" stroke="#8AFF57" stroke-width="5" stroke-linecap="round" stroke-dasharray="60 179" class="spin" filter="url(#glow)"/>
+<text x="89" y="206" text-anchor="middle" font-size="28" font-weight="bold" fill="#CAFF3C">1</text>
+<text x="89" y="254" text-anchor="middle" font-size="9" fill="#8AFF57">CURRENT STREAK</text>
+<text x="157" y="166" font-size="10" fill="#8AFF57">TOTAL</text>
+<text x="157" y="192" font-size="26" font-weight="bold" fill="#CAFF3C" filter="url(#glow)">120</text>
+<text x="157" y="212" font-size="10" fill="#8AFF57">LONGEST STREAK</text>
+<text x="157" y="238" font-size="26" font-weight="bold" fill="#CAFF3C" filter="url(#glow)">2</text>
+<text x="41" y="274" font-size="10" fill="#8AFF57">LAST 7 DAYS: 7</text>
+<rect x="72.0" y="303.0" width="18" height="3.0" rx="2" fill="#CAFF3C" fill-opacity="0.3" class="grow" style="animation-delay:-0.0s"/>
+<text x="81.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">M</text>
+<rect x="104.0" y="303.0" width="18" height="3.0" rx="2" fill="#CAFF3C" fill-opacity="0.3" class="grow" style="animation-delay:-0.3s"/>
+<text x="113.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">T</text>
+<rect x="136.0" y="303.0" width="18" height="3.0" rx="2" fill="#CAFF3C" fill-opacity="0.3" class="grow" style="animation-delay:-0.6s"/>
+<text x="145.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">W</text>
+<rect x="168.0" y="303.0" width="18" height="3.0" rx="2" fill="#CAFF3C" fill-opacity="0.3" class="grow" style="animation-delay:-0.9s"/>
+<text x="177.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">T</text>
+<rect x="200.0" y="303.0" width="18" height="3.0" rx="2" fill="#CAFF3C" fill-opacity="0.3" class="grow" style="animation-delay:-1.2s"/>
+<text x="209.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">F</text>
+<rect x="232.0" y="303.0" width="18" height="3.0" rx="2" fill="#CAFF3C" fill-opacity="0.3" class="grow" style="animation-delay:-1.5s"/>
+<text x="241.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">S</text>
+<rect x="264.0" y="278.0" width="18" height="28.0" rx="2" fill="#CAFF3C" fill-opacity="1" class="grow" style="animation-delay:-1.8s"/>
+<text x="273.0" y="319" text-anchor="middle" font-size="8" fill="#8AFF57">S</text>
+<rect x="341" y="104" width="318" height="222" rx="8" fill="#CAFF3C" fill-opacity=".03" stroke="#CAFF3C" stroke-width="1.5" class="pan" style="animation-delay:0.4s"/>
+<text x="355" y="128" font-size="12" fill="#CAFF3C">02 // ACTIVITY</text>
+<circle cx="643" cy="124" r="3" fill="#8AFF57" class="dot" style="animation-delay:0.2s"/>
+<text x="629" y="128" text-anchor="end" font-size="10" fill="#8AFF57">13 WEEKS</text>
+<rect x="370" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="370" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="370" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="370" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="370" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="370" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="370" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="390" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="410" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="430" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="450" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="470" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="490" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="510" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="530" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="550" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="570" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="168" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="188" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="208" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="228" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="248" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="590" y="268" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="0.1"/>
+<rect x="610" y="148" width="16" height="16" rx="3" fill="#CAFF3C" fill-opacity="1" class="tw" style="animation-delay:-1.05s"/>
+<text x="500" y="310" text-anchor="middle" font-size="10" fill="#8AFF57">7 CONTRIBUTIONS · BEST DAY 7</text>
+<rect x="673" y="104" width="300" height="222" rx="8" fill="#CAFF3C" fill-opacity=".03" stroke="#CAFF3C" stroke-width="1.5" class="pan" style="animation-delay:0.8s"/>
+<text x="687" y="128" font-size="12" fill="#CAFF3C">03 // COMPETITIVE</text>
+<circle cx="957" cy="124" r="3" fill="#8AFF57" class="dot" style="animation-delay:0.4s"/>
+<text x="687" y="150" font-size="10" fill="#8AFF57">LEETCODE</text>
+<text x="687" y="180" font-size="28" font-weight="bold" fill="#CAFF3C" filter="url(#glow)">1816</text>
+<text x="687" y="193" font-size="8" fill="#8AFF57">CONTEST RATING</text>
+<text x="959" y="180" text-anchor="end" font-size="28" font-weight="bold" fill="#CAFF3C" filter="url(#glow)">781</text>
+<text x="959" y="193" text-anchor="end" font-size="8" fill="#8AFF57">SOLVED</text>
+<text x="687" y="213" font-size="9" fill="#8AFF57">E</text>
+<rect x="701" y="205" width="190" height="8" rx="2" fill="#CAFF3C" fill-opacity=".1"/>
+<rect x="701" y="205" width="116" height="8" rx="2" fill="#CAFF3C" fill-opacity=".85"/>
+<text x="959" y="213" text-anchor="end" font-size="9" fill="#8AFF57">261</text>
+<text x="687" y="227" font-size="9" fill="#8AFF57">M</text>
+<rect x="701" y="219" width="190" height="8" rx="2" fill="#CAFF3C" fill-opacity=".1"/>
+<rect x="701" y="219" width="190" height="8" rx="2" fill="#CAFF3C" fill-opacity=".85"/>
+<text x="959" y="227" text-anchor="end" font-size="9" fill="#8AFF57">426</text>
+<text x="687" y="241" font-size="9" fill="#8AFF57">H</text>
+<rect x="701" y="233" width="190" height="8" rx="2" fill="#CAFF3C" fill-opacity=".1"/>
+<rect x="701" y="233" width="42" height="8" rx="2" fill="#CAFF3C" fill-opacity=".85"/>
+<text x="959" y="241" text-anchor="end" font-size="9" fill="#8AFF57">94</text>
+<path d="M687 252H959" stroke="#CAFF3C" stroke-opacity=".3"/>
+<text x="687" y="272" font-size="10" fill="#8AFF57">CODEFORCES // PUPIL</text>
+<text x="687" y="302" font-size="28" font-weight="bold" fill="#CAFF3C" filter="url(#glow)">1201</text>
+<text x="687" y="315" font-size="8" fill="#8AFF57">RATING</text>
+<text x="959" y="302" text-anchor="end" font-size="28" font-weight="bold" fill="#CAFF3C" filter="url(#glow)">1201</text>
+<text x="959" y="315" text-anchor="end" font-size="8" fill="#8AFF57">MAX RATING</text>
+<g font-size="11" fill="#8AFF57">
+<rect x="27" y="346" width="946" height="34" rx="6" fill="#CAFF3C" fill-opacity=".04" stroke="#CAFF3C" stroke-opacity=".5"/>
+<circle cx="45" cy="363" r="4" fill="#CAFF3C" class="dot"/>
+<text x="57" y="367">STATUS: SYNCED</text>
+<text x="257" y="367">LAST SYNC: 2026-11-08 UTC</text>
+<text x="547" y="367">AUTO-UPDATE: DAILY 23:00 IST</text>
+</g>
+<rect x="0" y="-80" width="1000" height="80" fill="url(#scan)"><animateTransform attributeName="transform" type="translate" values="0 0;0 480" dur="5s" repeatCount="indefinite"/></rect>
+</g></svg>
