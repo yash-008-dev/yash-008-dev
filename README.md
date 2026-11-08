@@ -62,7 +62,9 @@ Right now I'm going deeper into AI/ML — model evaluation, agentic systems, and
 <p align="center">
   <img src="./analytics.svg" width="100%" alt="Developer Analytics"/>
 </p>
+
 ---
+
 ## Let's Connect
 
 <p align="center">
