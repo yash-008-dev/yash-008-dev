@@ -298,14 +298,14 @@ text{font-family:"Courier New",Courier,monospace}
 <rect x="687" y="376" width="286" height="172" rx="8" fill="#CAFF3C" fill-opacity=".03" stroke="#CAFF3C" stroke-width="1.5" class="pan" style="animation-delay:2.0s"/>
 <text x="701.0" y="400.0" font-size="12" fill="#CAFF3C" text-anchor="start">06 // COMPETITIVE</text>
 <circle cx="957" cy="396" r="3" fill="#8AFF57" class="dot" style="animation-delay:1.0s"/>
-<text x="701.0" y="434.0" font-size="24" fill="#CAFF3C" text-anchor="start" font-weight="bold" filter="url(#glow)">787</text>
+<text x="701.0" y="434.0" font-size="24" fill="#CAFF3C" text-anchor="start" font-weight="bold" filter="url(#glow)">788</text>
 <text x="701.0" y="446.0" font-size="8" fill="#8AFF57" text-anchor="start">LEETCODE SOLVED</text>
 <text x="959.0" y="434.0" font-size="24" fill="#CAFF3C" text-anchor="end" font-weight="bold" filter="url(#glow)">1843</text>
 <text x="959.0" y="446.0" font-size="8" fill="#8AFF57" text-anchor="end">LEETCODE RATING</text>
-<rect x="701.0" y="456" width="85.2" height="8" fill="#CAFF3C" fill-opacity="0.35"/>
-<rect x="787.2" y="456" width="139.3" height="8" fill="#CAFF3C" fill-opacity="0.65"/>
-<rect x="927.5" y="456" width="30.5" height="8" fill="#CAFF3C" fill-opacity="1"/>
-<text x="701.0" y="478.0" font-size="9" fill="#8AFF57" text-anchor="start">EASY 263  MED 428  HARD 96</text>
+<rect x="701.0" y="456" width="85.1" height="8" fill="#CAFF3C" fill-opacity="0.35"/>
+<rect x="787.1" y="456" width="139.1" height="8" fill="#CAFF3C" fill-opacity="0.65"/>
+<rect x="927.2" y="456" width="30.8" height="8" fill="#CAFF3C" fill-opacity="1"/>
+<text x="701.0" y="478.0" font-size="9" fill="#8AFF57" text-anchor="start">EASY 263  MED 428  HARD 97</text>
 <path d="M701 488H959" stroke="#CAFF3C" stroke-opacity=".3"/>
 <text x="701.0" y="506.0" font-size="9" fill="#8AFF57" text-anchor="start">CODEFORCES // NEWBIE</text>
 <text x="959.0" y="506.0" font-size="9" fill="#8AFF57" text-anchor="end">MAX 1201</text>
